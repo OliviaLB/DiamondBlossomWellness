@@ -1,0 +1,3 @@
+@import './themeColours.css';
+@import 'tailwindcss';
+@config '../tailwind.config.ts';
