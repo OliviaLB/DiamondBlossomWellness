@@ -1,6 +1,13 @@
 import clsx from 'clsx';
 import { motion } from 'motion/react';
-import { CONTAINED_TONE, getButtonClassName, getButtonToneClassName, TEXT_UNDERLINE_TONE } from './Button.styles';
+import {
+  CONTAINED_TONE,
+  getButtonClassName,
+  getButtonToneClassName,
+  TAP_ANIMATION,
+  TAP_TRANSITION,
+  TEXT_UNDERLINE_TONE
+} from './Button.styles';
 import type { ButtonProps } from './Button.types';
 
 /**
@@ -15,8 +22,15 @@ import type { ButtonProps } from './Button.types';
  * - `text`: label only, in the tone's base shade; on hover an underline
  *   grows out from the centre, under the label.
  *
+ * Every variant also gets a springy `whileTap` press (see `TAP_ANIMATION`/
+ * `TAP_TRANSITION` in `Button.styles.ts`) and an animated keyboard-focus
+ * ring - `outline-color`/`outline-offset` transition in via `:focus-visible`
+ * (so it only appears for keyboard/tab navigation, never a mouse click),
+ * kept off `transform` entirely so it can never fight the tap/hover
+ * animations' own inline `transform` for the same element.
+ *
  * `disabled` overrides every variant with the same `accent-300` background /
- * `accent-600` text and drops all hover behaviour.
+ * `accent-600` text and drops all hover/tap/focus behaviour.
  */
 export const Button = ({
   borderRadius = 'md',
@@ -55,6 +69,8 @@ export const Button = ({
         onClick={onClick}
         initial="rest"
         whileHover={disabled ? undefined : 'hover'}
+        whileTap={disabled ? undefined : TAP_ANIMATION}
+        transition={TAP_TRANSITION}
       >
         {!disabled && (
           <motion.span
@@ -75,13 +91,15 @@ export const Button = ({
   }
 
   return (
-    <button
+    <motion.button
       id={id}
       type="button"
       data-testid={dataTestId}
       className={rootClassName}
       disabled={disabled}
       onClick={onClick}
+      whileTap={disabled ? undefined : TAP_ANIMATION}
+      transition={TAP_TRANSITION}
     >
       <span className="relative inline-flex items-center gap-2">
         {startIcon}
@@ -97,6 +115,6 @@ export const Button = ({
           />
         )}
       </span>
-    </button>
+    </motion.button>
   );
 };

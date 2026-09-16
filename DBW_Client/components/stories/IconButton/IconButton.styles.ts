@@ -28,7 +28,8 @@ export const getIconButtonClassName = ({
 }: IconButtonClassNameProps): string =>
   clsx(
     'inline-flex items-center justify-center',
-    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-400',
+    'outline-2 outline-offset-1 outline-transparent transition-[outline-offset,outline-color] duration-200 ease-out',
+    'focus-visible:outline-secondary-400 focus-visible:outline-offset-4',
     'disabled:pointer-events-none',
     ICON_SIZE_STYLE[size],
     BORDERRADIUS[borderRadius],

@@ -1,6 +1,11 @@
 import clsx from 'clsx';
+import type { Transition } from 'motion/react';
 import { BORDERRADIUS, MARGINX, MARGINY, PADDINGX, PADDINGY } from '../../common.styles';
 import type { ButtonProps, ButtonSize, ButtonTone, ButtonVariant } from './Button.types';
+
+/** Click/tap feedback shared by every variant of `Button`/`IconButton` - a quick, springy squash rather than a linear ease. */
+export const TAP_ANIMATION = { scale: 0.94 };
+export const TAP_TRANSITION: Transition = { type: 'spring', stiffness: 500, damping: 30 };
 
 interface SizeStyle {
   paddingX: string;
@@ -72,7 +77,8 @@ export const getButtonClassName = ({
 
   return clsx(
     'inline-flex items-center justify-center gap-2 font-body font-medium tracking-wide uppercase',
-    'focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-secondary-400',
+    'outline-2 outline-offset-1 outline-transparent transition-[outline-offset,outline-color] duration-200 ease-out',
+    'focus-visible:outline-secondary-400 focus-visible:outline-offset-4',
     'disabled:pointer-events-none',
     paddingX ? PADDINGX[paddingX] : sizeStyle.paddingX,
     paddingY ? PADDINGY[paddingY] : sizeStyle.paddingY,

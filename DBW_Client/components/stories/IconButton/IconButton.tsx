@@ -1,13 +1,14 @@
 import clsx from 'clsx';
 import { motion } from 'motion/react';
-import { CONTAINED_TONE } from '../Button/Button.styles';
+import { CONTAINED_TONE, TAP_ANIMATION, TAP_TRANSITION } from '../Button/Button.styles';
 import { getIconButtonClassName, getIconButtonToneClassName } from './IconButton.styles';
 import type { IconButtonProps } from './IconButton.types';
 
 /**
  * Icon-only companion to `Button`, sharing its `tone`/`variant` colour
- * system (`Button.styles`' `CONTAINED_TONE`/`OUTLINED_TONE`/`TEXT_TONE`) so
- * the two can never drift apart:
+ * system (`Button.styles`' `CONTAINED_TONE`/`OUTLINED_TONE`/`TEXT_TONE`) and
+ * its `TAP_ANIMATION`/`TAP_TRANSITION` click feedback, so the two can never
+ * drift apart:
  *
  * - `contained` (default): solid tone background; on hover a darker shade
  *   crossfades in, same treatment as `Button`.
@@ -17,8 +18,13 @@ import type { IconButtonProps } from './IconButton.types';
  * - `text`: icon only, in the tone's base shade; on hover a soft tinted
  *   circle crossfades in behind it - there's no label to underline.
  *
+ * Every variant also gets a springy `whileTap` press and an animated
+ * keyboard-focus ring (`:focus-visible` only, never a mouse click) - see
+ * `Button`'s own doc comment for why the ring animates `outline-offset`/
+ * `outline-color` rather than `transform`.
+ *
  * `disabled` overrides every variant with the same `accent-300` background /
- * `accent-600` icon colour and drops all hover behaviour.
+ * `accent-600` icon colour and drops all hover/tap/focus behaviour.
  */
 export const IconButton = ({
   'aria-label': ariaLabel,
@@ -42,7 +48,7 @@ export const IconButton = ({
 
   if (variant === 'outlined') {
     return (
-      <button
+      <motion.button
         id={id}
         type="button"
         aria-label={ariaLabel}
@@ -50,9 +56,11 @@ export const IconButton = ({
         className={rootClassName}
         disabled={disabled}
         onClick={onClick}
+        whileTap={disabled ? undefined : TAP_ANIMATION}
+        transition={TAP_TRANSITION}
       >
         {icon}
-      </button>
+      </motion.button>
     );
   }
 
@@ -70,6 +78,8 @@ export const IconButton = ({
       onClick={onClick}
       initial="rest"
       whileHover={disabled ? undefined : 'hover'}
+      whileTap={disabled ? undefined : TAP_ANIMATION}
+      transition={TAP_TRANSITION}
     >
       {!disabled && (
         <motion.span
