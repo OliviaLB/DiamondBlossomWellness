@@ -1,5 +1,6 @@
 import type { MouseEventHandler, ReactNode } from 'react';
-import { BORDERRADIUS, Spacing } from '../../common.styles';
+import { BORDERRADIUS } from '../../common.styles';
+import type { Spacing } from '../../common.styles';
 import type { ButtonSize, ButtonTone, ButtonVariant } from '../Button/Button.types';
 
 export type { ButtonSize as IconButtonSize, ButtonTone as IconButtonTone, ButtonVariant as IconButtonVariant };

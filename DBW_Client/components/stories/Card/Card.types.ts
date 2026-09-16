@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { BackgroundColour, BORDERRADIUS, BorderColour, Spacing } from '../../common.styles';
+import { BORDERRADIUS } from '../../common.styles';
+import type { BackgroundColour, BorderColour, Spacing } from '../../common.styles';
 import type { Shadow } from '../Box/Box.types';
 
 export interface CardProps {
@@ -18,12 +19,15 @@ export interface CardProps {
    * @default 'xl'
    */
   borderRadius?: keyof typeof BORDERRADIUS;
-  /** Main card content, rendered beneath `title`/`subtitle`. */
+  /**
+   * Card contents - compose with `CardHeader`/`CardContent`/`CardFooter`
+   * (each bringing its own padding), or anything else. `Card` itself
+   * imposes no padding or layout of its own, so a plain `<img>` placed
+   * first renders full-bleed, clipped to `borderRadius`.
+   */
   children?: ReactNode;
   /** `data-testid` applied to the root element, for test/automation targeting. */
   'data-testid'?: string;
-  /** Rendered in its own row beneath the content, separated by a divider - typically action buttons. */
-  footer?: ReactNode;
   /**
    * If `true`, the card takes up the full width of its container.
    * @default false
@@ -40,27 +44,11 @@ export interface CardProps {
   marginX?: Spacing;
   /** Vertical margin for the component. */
   marginY?: Spacing;
-  /** Media rendered full-bleed at the top of the card, above the padded content - typically an `<img>`. */
-  media?: ReactNode;
   /** Called when the card is clicked or activated via keyboard. Only relevant when `interactive`. */
   onClick?: () => void;
-  /**
-   * Horizontal padding for the content/footer area - not applied to `media`.
-   * @default '4x'
-   */
-  paddingX?: Spacing;
-  /**
-   * Vertical padding for the content area - not applied to `media`.
-   * @default '4x'
-   */
-  paddingY?: Spacing;
   /**
    * Box-shadow size, Tailwind's built-in scale.
    * @default 'none'
    */
   shadow?: Shadow;
-  /** Supporting text under `title`, rendered in a muted tone. */
-  subtitle?: ReactNode;
-  /** Card title, rendered as a heading above `subtitle`/`children`. */
-  title?: ReactNode;
 }

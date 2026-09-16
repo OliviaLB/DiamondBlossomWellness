@@ -1,5 +1,6 @@
 import type { MouseEventHandler, ReactNode } from 'react';
-import { BORDERRADIUS, Spacing } from '../../common.styles';
+import { BORDERRADIUS } from '../../common.styles';
+import type { Spacing } from '../../common.styles';
 
 export type ButtonSize = 'xs' | 'sm' | 'md' | 'lg' | 'xl';
 export type ButtonTone = 'primary' | 'secondary' | 'tertiary';
