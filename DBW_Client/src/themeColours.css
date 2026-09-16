@@ -1,5 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@200;300;400;500;600&display=swap');
-
 :root {
   /* ==========================================================================
      PRIMARY — Midnight Navy (dominant background blue)
@@ -59,57 +57,63 @@
 
   /* ==========================================================================
      STATUS COLORS — warning / success / danger
-     each with background / border / text triads, tuned to sit on the
-     navy brand without clashing with the lavender/pink/silver palette
+     each with subtle (bg) / edge (border) / ink (text) triads, tuned to sit
+     on the navy brand without clashing with the lavender/pink/silver palette.
+     Sub-keys avoid "bg"/"border"/"text" so Tailwind classes never stutter
+     (bg-success-subtle, border-success-edge, text-success-ink).
      ========================================================================== */
 
   /* Success — soft jade, harmonizes with the cool palette */
-  --color-success-bg: #e4f5ee;
-  --color-success-border: #7fcbae;
-  --color-success-text: #1f7a57;
-  --color-success-bg-dark: #103528;
-  --color-success-border-dark: #2c7a56;
-  --color-success-text-dark: #7fe0b8;
+  --color-success-subtle: #e4f5ee;
+  --color-success-edge: #7fcbae;
+  --color-success-ink: #1f7a57;
+  --color-success-subtle-dark: #103528;
+  --color-success-edge-dark: #2c7a56;
+  --color-success-ink-dark: #7fe0b8;
 
   /* Warning — warm champagne gold, reads as "premium" not alarming */
-  --color-warning-bg: #fbf1de;
-  --color-warning-border: #e6c27a;
-  --color-warning-text: #8a6412;
-  --color-warning-bg-dark: #3a2e12;
-  --color-warning-border-dark: #8a6a26;
-  --color-warning-text-dark: #f0ce86;
+  --color-warning-subtle: #fbf1de;
+  --color-warning-edge: #e6c27a;
+  --color-warning-ink: #8a6412;
+  --color-warning-subtle-dark: #3a2e12;
+  --color-warning-edge-dark: #8a6a26;
+  --color-warning-ink-dark: #f0ce86;
 
   /* Danger — muted rose-red, stays inside the pink/blossom family */
-  --color-danger-bg: #fbe7ec;
-  --color-danger-border: #e28fa3;
-  --color-danger-text: #a5233f;
-  --color-danger-bg-dark: #3a121b;
-  --color-danger-border-dark: #8a3349;
-  --color-danger-text-dark: #f0a3b5;
+  --color-danger-subtle: #fbe7ec;
+  --color-danger-edge: #e28fa3;
+  --color-danger-ink: #a5233f;
+  --color-danger-subtle-dark: #3a121b;
+  --color-danger-edge-dark: #8a3349;
+  --color-danger-ink-dark: #f0a3b5;
 
   /* ==========================================================================
-     SURFACES
+     SURFACES — use as bg-surface-*
      ========================================================================== */
-  --surface-app-bg: var(--color-primary-900); /* full page background */
+  --surface-app: var(--color-primary-900); /* full page background */
   --surface-canvas: var(--color-primary-800); /* main content canvas */
   --surface-card: #12173c; /* elevated card */
   --surface-card-raised: #1a2050; /* hover / raised card */
   --surface-sunken: #060811; /* wells, insets */
-  --surface-border: rgba(199, 203, 218, 0.14); /* hairline borders */
-  --surface-border-strong: rgba(199, 203, 218, 0.28);
-  --surface-divider: rgba(255, 255, 255, 0.08);
   --surface-inverse: var(--color-accent-100); /* light surface on dark brand */
   --surface-inverse-card: #fbfbfd;
 
   /* ==========================================================================
-     TYPOGRAPHY — colors
+     LINE — borders / dividers, use as border-line / border-line-strong
      ========================================================================== */
-  --type-primary: #f5f4fa; /* headings / logotype on navy */
-  --type-secondary: #b9bcd4; /* body copy, subdued */
-  --type-contrast: #08090f; /* text on light surfaces */
-  --type-muted: #7b7fa0; /* captions, metadata */
-  --type-link: var(--color-secondary-400);
-  --type-link-hover: var(--color-tertiary-400);
+  --line: rgba(199, 203, 218, 0.14); /* hairline borders */
+  --line-strong: rgba(199, 203, 218, 0.28);
+  --line-divider: rgba(255, 255, 255, 0.08);
+
+  /* ==========================================================================
+     INK — text colors, use as text-ink-*
+     ========================================================================== */
+  --ink-primary: #f5f4fa; /* headings / logotype on navy */
+  --ink-secondary: #b9bcd4; /* body copy, subdued */
+  --ink-contrast: #08090f; /* text on light surfaces */
+  --ink-muted: #7b7fa0; /* captions, metadata */
+  --ink-link: var(--color-secondary-400);
+  --ink-link-hover: var(--color-tertiary-400);
 
   /* ==========================================================================
      OVERLAY — modal / scrim backgrounds
