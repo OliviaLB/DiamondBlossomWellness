@@ -1,4 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
+import { faArrowRight, faCheck } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Button } from './Button';
 
 const meta = {
@@ -86,8 +88,8 @@ export const Sizes: Story = {
 export const WithIcons: Story = {
   render: () => (
     <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
-      <Button label="Confirm" startIcon={<span aria-hidden>✓</span>} />
-      <Button variant="outlined" tone="secondary" label="Next" endIcon={<span aria-hidden>&rarr;</span>} />
+      <Button label="Confirm" startIcon={<FontAwesomeIcon icon={faCheck} />} />
+      <Button variant="outlined" tone="secondary" label="Next" endIcon={<FontAwesomeIcon icon={faArrowRight} />} />
     </div>
   )
 };

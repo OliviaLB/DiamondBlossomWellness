@@ -1,3 +1,6 @@
+import { faArrowRight } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 export function HomeView() {
   return (
     <main className="flex min-h-screen flex-col items-center gap-6 bg-surface-app px-6 py-16 text-center">
@@ -12,8 +15,12 @@ export function HomeView() {
         held to a premium standard.
       </p>
 
-      <a href="#" className="font-body text-sm text-ink-link hover:text-ink-link-hover">
-        Explore our treatments &rarr;
+      <a
+        href="#"
+        className="inline-flex items-center gap-1.5 font-body text-sm text-ink-link hover:text-ink-link-hover"
+      >
+        Explore our treatments
+        <FontAwesomeIcon icon={faArrowRight} />
       </a>
 
       <p className="font-body text-xs text-ink-muted">Bookings open Tuesday &ndash; Saturday</p>
