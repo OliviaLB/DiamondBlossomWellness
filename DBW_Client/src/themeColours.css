@@ -113,7 +113,7 @@
   --ink-contrast: #08090f; /* text on light surfaces */
   --ink-muted: #7b7fa0; /* captions, metadata */
   --ink-link: var(--color-secondary-400);
-  --ink-link-hover: var(--color-tertiary-400);
+  --ink-link-hover: var(--color-secondary-500);
 
   /* ==========================================================================
      OVERLAY — modal / scrim backgrounds
