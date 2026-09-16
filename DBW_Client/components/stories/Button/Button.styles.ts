@@ -19,8 +19,8 @@ export const SIZE_STYLE: Record<ButtonSize, SizeStyle> = {
 
 /**
  * `contained`'s base/hover background, as raw CSS colours rather than
- * Tailwind classes - the hover shade wipes in via a Motion-driven overlay
- * (see `Button.tsx`), not a `hover:` pseudo-class.
+ * Tailwind classes - the hover shade crossfades in via a Motion-driven
+ * overlay (see `Button.tsx`), not a `hover:` pseudo-class.
  */
 export const CONTAINED_TONE: Record<ButtonTone, { base: string; hover: string }> = {
   primary: { base: 'var(--color-primary-400)', hover: 'var(--color-primary-500)' },

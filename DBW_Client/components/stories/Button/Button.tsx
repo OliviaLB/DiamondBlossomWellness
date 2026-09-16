@@ -8,7 +8,7 @@ import type { ButtonProps } from './Button.types';
  * (`primary`/`secondary`/`tertiary`):
  *
  * - `contained` (default): solid tone background; on hover a darker shade
- *   wipes in from the top via Motion, replacing the base shade.
+ *   crossfades in over the base shade via Motion.
  * - `outlined`: border + label in the tone's base shade; on hover the
  *   background fills with that same shade and the label flips to
  *   `ink-primary` for contrast.
@@ -59,10 +59,10 @@ export const Button = ({
         {!disabled && (
           <motion.span
             aria-hidden
-            className="absolute inset-0 origin-top"
+            className="absolute inset-0"
             style={{ backgroundColor: CONTAINED_TONE[tone].hover }}
-            variants={{ rest: { scaleY: 0 }, hover: { scaleY: 1 } }}
-            transition={{ duration: 0.25, ease: 'easeOut' }}
+            variants={{ rest: { opacity: 0 }, hover: { opacity: 1 } }}
+            transition={{ duration: 0.2, ease: 'easeOut' }}
           />
         )}
         <span className="relative z-10 inline-flex items-center gap-2">
