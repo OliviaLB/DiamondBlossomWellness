@@ -36,7 +36,7 @@ const FAMILIES: FontFamily[] = [
 const ALPHABET = 'ABCDEFGHIJKLM abcdefghijklm 0123456789';
 
 const FontCard = ({ name, cssVar, tailwindClass, role, weights }: FontFamily) => (
-  <div className="flex flex-col gap-3 rounded-lg border border-line bg-surface-card p-6">
+  <div className="flex flex-col gap-3 rounded-lg border border-line-primary bg-surface-card p-6">
     <div className="flex flex-col gap-1">
       <span className={`${tailwindClass} text-3xl text-ink-primary`}>{name}</span>
       <span className="font-body text-sm text-ink-secondary">{role}</span>

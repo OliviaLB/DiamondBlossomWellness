@@ -10,7 +10,7 @@ import type { ChipColour, ChipProps, ChipSize } from './Chip.types';
  * chip still reads as "soft" against the dark app background.
  */
 export const CHIP_COLOUR: Record<ChipColour, string> = {
-  neutral: 'border-line bg-surface-card text-ink-secondary',
+  neutral: 'border-line-primary bg-surface-card text-ink-secondary',
   primary: 'border-primary-400/40 bg-primary-400/10 text-primary-400',
   secondary: 'border-secondary-400/40 bg-secondary-400/10 text-secondary-400',
   tertiary: 'border-tertiary-400/40 bg-tertiary-400/10 text-tertiary-400',
@@ -28,7 +28,7 @@ export const CHIP_SIZE: Record<ChipSize, string> = {
 const INTERACTIVE_CLASSES =
   'cursor-pointer outline-2 outline-offset-1 outline-transparent transition-[outline-offset,outline-color,filter] duration-200 ease-out hover:brightness-125 focus-visible:outline-secondary-400 focus-visible:outline-offset-4';
 
-const DISABLED_CLASSES = 'cursor-not-allowed opacity-50';
+const DISABLED_CLASSES = 'cursor-not-allowed border-line-disabled! bg-surface-disabled! text-ink-disabled!';
 
 type ChipClassNameProps = Pick<ChipProps, 'colour' | 'disabled' | 'onClick' | 'size'>;
 

@@ -15,7 +15,7 @@ type CardClassNameProps = Pick<
 /** Shell - background/border/radius/shadow, plus the `interactive` affordances (cursor, hover shadow, focus ring). */
 export const getCardClassName = ({
   background = 'card',
-  border = 'default',
+  border = 'primary',
   borderRadius = 'xl',
   fullWidth = false,
   interactive = false,

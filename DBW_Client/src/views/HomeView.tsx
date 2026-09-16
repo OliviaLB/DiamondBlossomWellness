@@ -37,7 +37,7 @@ export function HomeView() {
         </span>
       </div>
 
-      <div className="mt-6 rounded-2xl border border-line bg-surface-card px-8 py-6">
+      <div className="mt-6 rounded-2xl border border-line-primary bg-surface-card px-8 py-6">
         <p className="font-heading text-lg text-accent-300">A note on our card surface</p>
         <p className="mt-2 font-body text-sm text-ink-secondary">
           This card sits on the raised surface tone, showing how body copy and accents read against it.

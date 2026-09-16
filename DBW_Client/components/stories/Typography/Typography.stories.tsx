@@ -17,20 +17,7 @@ const meta = {
     },
     colour: {
       control: 'select',
-      options: [
-        'primary',
-        'secondary',
-        'contrast',
-        'muted',
-        'link',
-        'link-hover',
-        'success',
-        'warning',
-        'danger',
-        'success-dark',
-        'warning-dark',
-        'danger-dark'
-      ]
+      options: ['primary', 'secondary', 'contrast', 'muted', 'link', 'link-hover', 'success', 'warning', 'danger']
     },
     textAlign: { control: 'select', options: ['left', 'center', 'right', 'justify'] },
     noWrap: { control: 'boolean' },
@@ -113,8 +100,8 @@ export const LabelAndButtonInContext: Story = {
  * Every named colour, on the page's own background - `primary` (the
  * default) and `secondary` are neutral ink shades, `muted` is for captions/
  * metadata, `link`/`link-hover` match an anchor's two states, and
- * `success`/`warning`/`danger` are status tones (each with an explicit
- * `-dark` variant - not an automatic dark-mode switch, see `themeColours.css`).
+ * `success`/`warning`/`danger` are status tones, tuned for the site's one
+ * dark theme (see `themeColours.css`).
  */
 export const ColourVariants: Story = {
   render: () => (
@@ -124,9 +111,9 @@ export const ColourVariants: Story = {
       <Typography colour="muted">muted - captions, metadata</Typography>
       <Typography colour="link">link - matches an unvisited link</Typography>
       <Typography colour="link-hover">link-hover - matches a hovered link</Typography>
-      <Typography colour="success-dark">success</Typography>
-      <Typography colour="warning-dark">warning</Typography>
-      <Typography colour="danger-dark">danger</Typography>
+      <Typography colour="success">success</Typography>
+      <Typography colour="warning">warning</Typography>
+      <Typography colour="danger">danger</Typography>
     </div>
   )
 };
@@ -142,7 +129,7 @@ export const ColourVariants: Story = {
 export const ColourOnDifferentBackgrounds: Story = {
   render: () => (
     <div className="flex flex-col gap-3 bg-surface-app p-4">
-      <Box border="default" borderRadius="md" paddingX="3x" paddingY="2x">
+      <Box border="primary" borderRadius="md" paddingX="3x" paddingY="2x">
         <Typography colour="primary">primary on the page&apos;s own background</Typography>
       </Box>
       <Box background="card" borderRadius="md" paddingX="3x" paddingY="2x">
@@ -188,14 +175,14 @@ export const NoWrap: Story = {
   args: {
     noWrap: true,
     children: 'This is a very long line of text that will be truncated with an ellipsis instead of wrapping.',
-    className: 'max-w-xs border border-dashed border-line bg-surface-app p-4'
+    className: 'max-w-xs border border-dashed border-line-primary bg-surface-app p-4'
   }
 };
 
 /** `gutterBottom` adds space below - handy for a heading immediately followed by body copy. */
 export const GutterBottom: Story = {
   render: () => (
-    <div className="border border-dashed border-line p-2 bg-surface-app">
+    <div className="border border-dashed border-line-primary p-2 bg-surface-app">
       <Typography variant="h4" gutterBottom>
         Section title
       </Typography>

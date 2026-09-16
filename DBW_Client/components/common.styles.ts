@@ -2,18 +2,7 @@ export type Spacing = 'none' | '1x' | '2x' | '3x' | '4x' | '5x';
 export type Radius = 'none' | 'sm' | 'md' | 'lg' | 'xl' | '2xl' | 'full';
 
 export type TextColour =
-  | 'primary'
-  | 'secondary'
-  | 'contrast'
-  | 'muted'
-  | 'link'
-  | 'link-hover'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'success-dark'
-  | 'warning-dark'
-  | 'danger-dark';
+  'primary' | 'secondary' | 'contrast' | 'muted' | 'link' | 'link-hover' | 'success' | 'warning' | 'danger';
 
 export type BackgroundColour =
   | 'primary'
@@ -29,25 +18,10 @@ export type BackgroundColour =
   | 'inverse-card'
   | 'success'
   | 'warning'
-  | 'danger'
-  | 'success-dark'
-  | 'warning-dark'
-  | 'danger-dark';
+  | 'danger';
 
 export type BorderColour =
-  | 'primary'
-  | 'secondary'
-  | 'tertiary'
-  | 'accent'
-  | 'default'
-  | 'strong'
-  | 'divider'
-  | 'success'
-  | 'warning'
-  | 'danger'
-  | 'success-dark'
-  | 'warning-dark'
-  | 'danger-dark';
+  'primary' | 'secondary' | 'tertiary' | 'accent' | 'disabled' | 'success' | 'warning' | 'danger';
 
 /**
  * Margin/padding scale shared by every component that offers spacing props
@@ -111,10 +85,7 @@ export const TEXTCOLOURS: Record<TextColour, string> = {
   'link-hover': 'text-ink-link-hover',
   success: 'text-success-ink',
   warning: 'text-warning-ink',
-  danger: 'text-danger-ink',
-  'success-dark': 'text-success-ink-dark',
-  'warning-dark': 'text-warning-ink-dark',
-  'danger-dark': 'text-danger-ink-dark'
+  danger: 'text-danger-ink'
 };
 
 /** Background colour scale shared by every component that offers a `backgroundColour` prop. */
@@ -132,25 +103,17 @@ export const BACKGROUNDCOLOURS: Record<BackgroundColour, string> = {
   'inverse-card': 'bg-surface-inverse-card',
   success: 'bg-success-subtle',
   warning: 'bg-warning-subtle',
-  danger: 'bg-danger-subtle',
-  'success-dark': 'bg-success-subtle-dark',
-  'warning-dark': 'bg-warning-subtle-dark',
-  'danger-dark': 'bg-danger-subtle-dark'
+  danger: 'bg-danger-subtle'
 };
 
 /** Border colour scale shared by every component that offers a `borderColour` prop. */
 export const BORDERCOLOURS: Record<BorderColour, string> = {
-  primary: 'border-primary',
-  secondary: 'border-secondary',
-  tertiary: 'border-tertiary',
-  accent: 'border-accent',
-  default: 'border-line',
-  strong: 'border-line-strong',
-  divider: 'border-line-divider',
+  primary: 'border-line-primary',
+  secondary: 'border-line-secondary',
+  tertiary: 'border-line-tertiary',
+  accent: 'border-line-accent',
+  disabled: 'border-line-disabled',
   success: 'border-success-edge',
   warning: 'border-warning-edge',
-  danger: 'border-danger-edge',
-  'success-dark': 'border-success-edge-dark',
-  'warning-dark': 'border-warning-edge-dark',
-  'danger-dark': 'border-danger-edge-dark'
+  danger: 'border-danger-edge'
 };

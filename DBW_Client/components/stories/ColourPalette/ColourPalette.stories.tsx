@@ -61,30 +61,21 @@ const ACCENT: Swatch[] = [
 ];
 
 const SUCCESS: Swatch[] = [
-  { label: 'Success Subtle', hex: '#e4f5ee', className: 'bg-success-subtle text-ink-contrast' },
-  { label: 'Success Edge', hex: '#7fcbae', className: 'bg-success-edge text-ink-contrast' },
-  { label: 'Success Ink', hex: '#1f7a57', className: 'bg-success-ink text-ink-primary' },
-  { label: 'Success Subtle Dark', hex: '#103528', className: 'bg-success-subtle-dark text-ink-primary' },
-  { label: 'Success Edge Dark', hex: '#2c7a56', className: 'bg-success-edge-dark text-ink-primary' },
-  { label: 'Success Ink Dark', hex: '#7fe0b8', className: 'bg-success-ink-dark text-ink-contrast' }
+  { label: 'Success Subtle', hex: '#103528', className: 'bg-success-subtle text-ink-primary' },
+  { label: 'Success Edge', hex: '#2c7a56', className: 'bg-success-edge text-ink-primary' },
+  { label: 'Success Ink', hex: '#7fe0b8', className: 'bg-success-ink text-ink-contrast' }
 ];
 
 const WARNING: Swatch[] = [
-  { label: 'Warning Subtle', hex: '#fbf1de', className: 'bg-warning-subtle text-ink-contrast' },
-  { label: 'Warning Edge', hex: '#e6c27a', className: 'bg-warning-edge text-ink-contrast' },
-  { label: 'Warning Ink', hex: '#8a6412', className: 'bg-warning-ink text-ink-primary' },
-  { label: 'Warning Subtle Dark', hex: '#3a2e12', className: 'bg-warning-subtle-dark text-ink-primary' },
-  { label: 'Warning Edge Dark', hex: '#8a6a26', className: 'bg-warning-edge-dark text-ink-primary' },
-  { label: 'Warning Ink Dark', hex: '#f0ce86', className: 'bg-warning-ink-dark text-ink-contrast' }
+  { label: 'Warning Subtle', hex: '#3a2e12', className: 'bg-warning-subtle text-ink-primary' },
+  { label: 'Warning Edge', hex: '#8a6a26', className: 'bg-warning-edge text-ink-primary' },
+  { label: 'Warning Ink', hex: '#f0ce86', className: 'bg-warning-ink text-ink-contrast' }
 ];
 
 const DANGER: Swatch[] = [
-  { label: 'Danger Subtle', hex: '#fbe7ec', className: 'bg-danger-subtle text-ink-contrast' },
-  { label: 'Danger Edge', hex: '#e28fa3', className: 'bg-danger-edge text-ink-contrast' },
-  { label: 'Danger Ink', hex: '#a5233f', className: 'bg-danger-ink text-ink-primary' },
-  { label: 'Danger Subtle Dark', hex: '#3a121b', className: 'bg-danger-subtle-dark text-ink-primary' },
-  { label: 'Danger Edge Dark', hex: '#8a3349', className: 'bg-danger-edge-dark text-ink-primary' },
-  { label: 'Danger Ink Dark', hex: '#f0a3b5', className: 'bg-danger-ink-dark text-ink-contrast' }
+  { label: 'Danger Subtle', hex: '#3a121b', className: 'bg-danger-subtle text-ink-primary' },
+  { label: 'Danger Edge', hex: '#8a3349', className: 'bg-danger-edge text-ink-primary' },
+  { label: 'Danger Ink', hex: '#f0a3b5', className: 'bg-danger-ink text-ink-contrast' }
 ];
 
 const SURFACES: Swatch[] = [
@@ -94,7 +85,8 @@ const SURFACES: Swatch[] = [
   { label: 'Surface Card Raised', hex: '#1a2050', className: 'bg-surface-card-raised text-ink-primary' },
   { label: 'Surface Sunken', hex: '#060811', className: 'bg-surface-sunken text-ink-primary' },
   { label: 'Surface Inverse', hex: '#ffffff', className: 'bg-surface-inverse text-ink-contrast' },
-  { label: 'Surface Inverse Card', hex: '#fbfbfd', className: 'bg-surface-inverse-card text-ink-contrast' }
+  { label: 'Surface Inverse Card', hex: '#fbfbfd', className: 'bg-surface-inverse-card text-ink-contrast' },
+  { label: 'Surface Disabled', hex: '#e2e4ec', className: 'bg-surface-disabled text-ink-contrast' }
 ];
 
 const INK: Swatch[] = [
@@ -102,8 +94,17 @@ const INK: Swatch[] = [
   { label: 'Ink Secondary', hex: '#b9bcd4', className: 'bg-ink-secondary text-ink-contrast' },
   { label: 'Ink Contrast', hex: '#08090f', className: 'bg-ink-contrast text-ink-primary' },
   { label: 'Ink Muted', hex: '#7b7fa0', className: 'bg-ink-muted text-ink-primary' },
+  { label: 'Ink Disabled', hex: '#82889f', className: 'bg-ink-disabled text-ink-primary' },
   { label: 'Ink Link', hex: '#ac90d8', className: 'bg-ink-link text-ink-contrast' },
   { label: 'Ink Link Hover', hex: '#e496bc', className: 'bg-ink-link-hover text-ink-contrast' }
+];
+
+const LINE: Swatch[] = [
+  { label: 'Line Primary', hex: '#9aa3dc', className: 'bg-line-primary text-ink-contrast' },
+  { label: 'Line Secondary', hex: '#cbb7e8', className: 'bg-line-secondary text-ink-contrast' },
+  { label: 'Line Tertiary', hex: '#f0bad3', className: 'bg-line-tertiary text-ink-contrast' },
+  { label: 'Line Accent', hex: '#e2e4ec', className: 'bg-line-accent text-ink-contrast' },
+  { label: 'Line Disabled', hex: '#c7cbda', className: 'bg-line-disabled text-ink-contrast' }
 ];
 
 const GROUPS: PaletteGroup[] = [
@@ -115,13 +116,14 @@ const GROUPS: PaletteGroup[] = [
   { title: 'Warning', swatches: WARNING },
   { title: 'Danger', swatches: DANGER },
   { title: 'Surfaces', swatches: SURFACES },
-  { title: 'Ink', swatches: INK }
+  { title: 'Ink', swatches: INK },
+  { title: 'Line — borders / dividers', swatches: LINE }
 ];
 
 const SwatchCard = ({ label, hex, className }: Swatch) => (
   <div
     className={clsx(
-      'flex h-20 min-w-[4rem] flex-1 flex-col items-center justify-center gap-1 rounded border border-line px-2 text-center',
+      'flex h-20 min-w-[4rem] flex-1 flex-col items-center justify-center gap-1 rounded border border-line-primary px-2 text-center',
       className
     )}
   >

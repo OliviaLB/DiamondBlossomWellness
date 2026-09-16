@@ -49,7 +49,7 @@ export const ErrorWinsOverHelper: Story = {
 /** With neither set, `HelperText` renders nothing at all - no empty spacing left behind. */
 export const Empty: Story = {
   render: () => (
-    <div className="max-w-sm border border-dashed border-line bg-surface-app p-6">
+    <div className="max-w-sm border border-dashed border-line-primary bg-surface-app p-6">
       <HelperText />
     </div>
   )

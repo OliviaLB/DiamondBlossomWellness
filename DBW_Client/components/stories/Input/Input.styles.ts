@@ -19,12 +19,11 @@ const BASE_CLASSES =
 
 type InputClassNameProps = Pick<InputProps, 'endIcon' | 'errorMessage' | 'size' | 'startIcon'>;
 
-/** Resolves the `<input>` element's own classes - size, surface, border (colour flips to `danger` when `errorMessage` is set), and left/right padding when `startIcon`/`endIcon` are given. */
 export const getInputClassName = ({ endIcon, errorMessage, size = 'md', startIcon }: InputClassNameProps): string =>
   clsx(
     BASE_CLASSES,
     INPUT_SIZE[size],
-    errorMessage ? 'border-danger-edge' : 'border-line',
+    errorMessage ? 'border-danger-edge' : 'border-line-primary',
     startIcon && 'pl-9',
     endIcon && 'pr-9'
   );

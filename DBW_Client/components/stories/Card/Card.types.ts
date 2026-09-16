@@ -11,7 +11,7 @@ export interface CardProps {
   background?: BackgroundColour;
   /**
    * Border colour, drawn from the shared {@link BorderColour} scale.
-   * @default 'default'
+   * @default 'primary'
    */
   border?: BorderColour;
   /**

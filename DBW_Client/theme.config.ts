@@ -18,15 +18,13 @@ const scale = (name: string) => ({
 /**
  * Sub-keys deliberately avoid "bg"/"border"/"text" so the resulting Tailwind
  * classes never stutter with their utility prefix, e.g. bg-success-subtle,
- * border-success-edge, text-success-ink (not bg-success-bg, etc.).
+ * border-success-edge, text-success-ink (not bg-success-bg, etc.). One triad
+ * per status - the site has a single dark theme, no light-mode counterpart.
  */
 const statusTriad = (name: string) => ({
   subtle: `var(--color-${name}-subtle)`,
   edge: `var(--color-${name}-edge)`,
-  ink: `var(--color-${name}-ink)`,
-  'subtle-dark': `var(--color-${name}-subtle-dark)`,
-  'edge-dark': `var(--color-${name}-edge-dark)`,
-  'ink-dark': `var(--color-${name}-ink-dark)`
+  ink: `var(--color-${name}-ink)`
 });
 
 const themeExtend: ThemeExtend = {
@@ -45,18 +43,22 @@ const themeExtend: ThemeExtend = {
       'card-raised': 'var(--surface-card-raised)',
       sunken: 'var(--surface-sunken)',
       inverse: 'var(--surface-inverse)',
-      'inverse-card': 'var(--surface-inverse-card)'
+      'inverse-card': 'var(--surface-inverse-card)',
+      disabled: 'var(--surface-disabled)'
     },
     line: {
-      DEFAULT: 'var(--line)',
-      strong: 'var(--line-strong)',
-      divider: 'var(--line-divider)'
+      primary: 'var(--line-primary)',
+      secondary: 'var(--line-secondary)',
+      tertiary: 'var(--line-tertiary)',
+      accent: 'var(--line-accent)',
+      disabled: 'var(--line-disabled)'
     },
     ink: {
       primary: 'var(--ink-primary)',
       secondary: 'var(--ink-secondary)',
       contrast: 'var(--ink-contrast)',
       muted: 'var(--ink-muted)',
+      disabled: 'var(--ink-disabled)',
       link: 'var(--ink-link)',
       'link-hover': 'var(--ink-link-hover)'
     },

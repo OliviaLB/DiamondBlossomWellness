@@ -57,35 +57,27 @@
 
   /* ==========================================================================
      STATUS COLORS — warning / success / danger
-     each with subtle (bg) / edge (border) / ink (text) triads, tuned to sit
-     on the navy brand without clashing with the lavender/pink/silver palette.
+     Subtle (bg) / edge (border) / ink (text) triads, tuned for this site's
+     one and only theme - dark navy. There is no light-mode counterpart, so
+     each is a dark, near-black tint paired with a pale ink for contrast.
      Sub-keys avoid "bg"/"border"/"text" so Tailwind classes never stutter
      (bg-success-subtle, border-success-edge, text-success-ink).
      ========================================================================== */
 
   /* Success — soft jade, harmonizes with the cool palette */
-  --color-success-subtle: #e4f5ee;
-  --color-success-edge: #7fcbae;
-  --color-success-ink: #1f7a57;
-  --color-success-subtle-dark: #103528;
-  --color-success-edge-dark: #2c7a56;
-  --color-success-ink-dark: #7fe0b8;
+  --color-success-subtle: #103528;
+  --color-success-edge: #2c7a56;
+  --color-success-ink: #7fe0b8;
 
   /* Warning — warm champagne gold, reads as "premium" not alarming */
-  --color-warning-subtle: #fbf1de;
-  --color-warning-edge: #e6c27a;
-  --color-warning-ink: #8a6412;
-  --color-warning-subtle-dark: #3a2e12;
-  --color-warning-edge-dark: #8a6a26;
-  --color-warning-ink-dark: #f0ce86;
+  --color-warning-subtle: #3a2e12;
+  --color-warning-edge: #8a6a26;
+  --color-warning-ink: #f0ce86;
 
   /* Danger — muted rose-red, stays inside the pink/blossom family */
-  --color-danger-subtle: #fbe7ec;
-  --color-danger-edge: #e28fa3;
+  --color-danger-subtle: #3a121b;
+  --color-danger-edge: #8a3349;
   --color-danger-ink: #f0a3b5;
-  --color-danger-subtle-dark: #3a121b;
-  --color-danger-edge-dark: #8a3349;
-  --color-danger-ink-dark: #f0a3b5;
 
   /* ==========================================================================
      SURFACES — use as bg-surface-*
@@ -97,13 +89,16 @@
   --surface-sunken: #060811; /* wells, insets */
   --surface-inverse: var(--color-accent-100); /* light surface on dark brand */
   --surface-inverse-card: #fbfbfd;
+  --surface-disabled: #e2e4ec; /* disabled card / button / input background */
 
   /* ==========================================================================
-     LINE — borders / dividers, use as border-line / border-line-strong
+     LINE — borders / dividers, use as border-line-primary / border-line-secondary
      ========================================================================== */
-  --line: rgba(199, 203, 218, 0.14); /* hairline borders */
-  --line-strong: rgba(199, 203, 218, 0.28);
-  --line-divider: rgba(255, 255, 255, 0.08);
+  --line-primary: #9aa3dc; /* primary-300 */
+  --line-secondary: #cbb7e8; /* secondary-300 */
+  --line-tertiary: #f0bad3; /* tertiary-300 */
+  --line-accent: #e2e4ec; /* accent-300 */
+  --line-disabled: #c7cbda; /* disabled border */
 
   /* ==========================================================================
      INK — text colors, use as text-ink-*
@@ -112,6 +107,7 @@
   --ink-secondary: #b9bcd4; /* body copy, subdued */
   --ink-contrast: #08090f; /* text on light surfaces */
   --ink-muted: #7b7fa0; /* captions, metadata */
+  --ink-disabled: #82889f; /* disabled text */
   --ink-link: var(--color-secondary-400);
   --ink-link-hover: var(--color-secondary-500);
 

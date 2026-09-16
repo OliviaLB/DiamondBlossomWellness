@@ -18,7 +18,7 @@ export const HelperText = ({ 'data-testid': dataTestId, errorMessage, helperText
       id={id}
       data-testid={dataTestId}
       variant="body2"
-      colour={errorMessage ? 'danger' : 'muted'}
+      colour={errorMessage ? 'danger' : 'secondary'}
       className="mt-1.5"
     >
       {message}

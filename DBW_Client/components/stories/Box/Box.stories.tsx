@@ -27,37 +27,23 @@ const meta = {
     paddingY: { control: 'select', options: ['none', '1x', '2x', '3x', '4x', '5x'] },
     border: {
       control: 'select',
-      options: [
-        'primary',
-        'secondary',
-        'tertiary',
-        'accent',
-        'default',
-        'strong',
-        'divider',
-        'success',
-        'warning',
-        'danger',
-        'success-dark',
-        'warning-dark',
-        'danger-dark'
-      ]
+      options: ['primary', 'secondary', 'tertiary', 'accent', 'disabled', 'success', 'warning', 'danger']
     },
     borderTop: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'accent', 'default', 'strong', 'divider']
+      options: ['primary', 'secondary', 'tertiary', 'accent', 'disabled']
     },
     borderRight: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'accent', 'default', 'strong', 'divider']
+      options: ['primary', 'secondary', 'tertiary', 'accent', 'disabled']
     },
     borderBottom: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'accent', 'default', 'strong', 'divider']
+      options: ['primary', 'secondary', 'tertiary', 'accent', 'disabled']
     },
     borderLeft: {
       control: 'select',
-      options: ['primary', 'secondary', 'tertiary', 'accent', 'default', 'strong', 'divider']
+      options: ['primary', 'secondary', 'tertiary', 'accent', 'disabled']
     },
     background: {
       control: 'select',
@@ -75,10 +61,7 @@ const meta = {
         'inverse-card',
         'success',
         'warning',
-        'danger',
-        'success-dark',
-        'warning-dark',
-        'danger-dark'
+        'danger'
       ]
     },
     shadow: { control: 'select', options: ['none', 'sm', 'md', 'lg', 'xl'] },
@@ -114,7 +97,7 @@ export const Default: Story = {
  */
 export const PolymorphicTag: Story = {
   render: (args) => (
-    <Box {...args} as="section" className="rounded border border-line p-4" background="card">
+    <Box {...args} as="section" className="rounded border border-line-primary p-4" background="card">
       <span className="text-ink-primary">Rendered as a &lt;section&gt;.</span>
     </Box>
   )
@@ -129,7 +112,7 @@ export const FlexLayout: Story = {
     gap: '2x'
   },
   render: (args) => (
-    <Box {...args} className="rounded border border-line p-4" background="card">
+    <Box {...args} className="rounded border border-line-primary p-4" background="card">
       <Swatch label="A" />
       <Swatch label="B" />
       <Swatch label="C" />
@@ -146,7 +129,7 @@ export const FlexColumn: Story = {
     gap: '2x'
   },
   render: (args) => (
-    <Box {...args} className="rounded border border-line p-4" background="card">
+    <Box {...args} className="rounded border border-line-primary p-4" background="card">
       <Swatch label="A" />
       <Swatch label="B" />
       <Swatch label="C" />
@@ -165,7 +148,7 @@ export const FullWidth: Story = {
     fullWidth: true
   },
   render: (args) => (
-    <Box {...args} className="border border-dashed border-line p-4" background="card">
+    <Box {...args} className="border border-dashed border-line-primary p-4" background="card">
       <span className="text-ink-primary">Fills its container.</span>
     </Box>
   )
@@ -230,14 +213,14 @@ export const TokenColours: Story = {
     gap: '2x',
     paddingX: '3x',
     paddingY: '3x',
-    border: 'strong',
+    border: 'accent',
     background: 'card',
     shadow: 'xl'
   },
   render: (args) => (
     <Box {...args}>
       <span className="text-ink-primary">
-        background=&quot;card&quot;, border=&quot;strong&quot;, shadow=&quot;xl&quot;
+        background=&quot;card&quot;, border=&quot;accent&quot;, shadow=&quot;xl&quot;
       </span>
     </Box>
   )
@@ -266,7 +249,7 @@ export const CornerRadius: Story = {
     display: 'flex',
     paddingX: '3x',
     paddingY: '3x',
-    border: 'strong',
+    border: 'accent',
     background: 'card',
     borderRadius: 'xl'
   },
@@ -287,7 +270,7 @@ export const IndividualCornerRadius: Story = {
     display: 'flex',
     paddingX: '3x',
     paddingY: '3x',
-    border: 'strong',
+    border: 'accent',
     background: 'card',
     borderRadius: 'xl',
     radiusBottomLeft: 'none'
@@ -310,11 +293,11 @@ export const IndividualBorderSides: Story = {
     paddingX: '3x',
     paddingY: '2x',
     background: 'card',
-    borderLeft: 'strong'
+    borderLeft: 'accent'
   },
   render: (args) => (
     <Box {...args}>
-      <span className="text-ink-primary">borderLeft=&quot;strong&quot;</span>
+      <span className="text-ink-primary">borderLeft=&quot;accent&quot;</span>
     </Box>
   )
 };

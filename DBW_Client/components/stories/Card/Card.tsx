@@ -22,7 +22,7 @@ const HOVER_LIFT = { y: -4 };
  */
 export const Card = ({
   background = 'card',
-  border = 'default',
+  border = 'primary',
   borderRadius = 'xl',
   children,
   'data-testid': dataTestId,

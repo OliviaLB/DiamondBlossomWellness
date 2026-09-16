@@ -168,19 +168,14 @@ export const getLayoutClassName = (
 // Tailwind classes so each of borderTop/Right/Bottom/Left can independently
 // override `border`, which a static `border-{colour}` utility class can't do.
 const BORDER_COLOUR_VALUE: Record<BorderColour, string> = {
-  primary: 'var(--color-primary)',
-  secondary: 'var(--color-secondary)',
-  tertiary: 'var(--color-tertiary)',
-  accent: 'var(--color-accent)',
-  default: 'var(--line)',
-  strong: 'var(--line-strong)',
-  divider: 'var(--line-divider)',
+  primary: 'var(--line-primary)',
+  secondary: 'var(--line-secondary)',
+  tertiary: 'var(--line-tertiary)',
+  accent: 'var(--line-accent)',
+  disabled: 'var(--line-disabled)',
   success: 'var(--color-success-edge)',
   warning: 'var(--color-warning-edge)',
-  danger: 'var(--color-danger-edge)',
-  'success-dark': 'var(--color-success-edge-dark)',
-  'warning-dark': 'var(--color-warning-edge-dark)',
-  'danger-dark': 'var(--color-danger-edge-dark)'
+  danger: 'var(--color-danger-edge)'
 };
 
 const BACKGROUND_COLOUR_VALUE: Record<BackgroundColour, string> = {
@@ -197,10 +192,7 @@ const BACKGROUND_COLOUR_VALUE: Record<BackgroundColour, string> = {
   'inverse-card': 'var(--surface-inverse-card)',
   success: 'var(--color-success-subtle)',
   warning: 'var(--color-warning-subtle)',
-  danger: 'var(--color-danger-subtle)',
-  'success-dark': 'var(--color-success-subtle-dark)',
-  'warning-dark': 'var(--color-warning-subtle-dark)',
-  'danger-dark': 'var(--color-danger-subtle-dark)'
+  danger: 'var(--color-danger-subtle)'
 };
 
 /** Resolves the border/background colour props into inline `style` - each border side falls back to the uniform `border` colour when not itself set. */
@@ -211,7 +203,10 @@ export const getColourStyle = ({
   borderLeft,
   borderRight,
   borderTop
-}: Pick<BoxLayoutProps, 'background' | 'border' | 'borderTop' | 'borderRight' | 'borderBottom' | 'borderLeft'>): CSSProperties => {
+}: Pick<
+  BoxLayoutProps,
+  'background' | 'border' | 'borderTop' | 'borderRight' | 'borderBottom' | 'borderLeft'
+>): CSSProperties => {
   const top = borderTop ?? border;
   const right = borderRight ?? border;
   const bottom = borderBottom ?? border;
