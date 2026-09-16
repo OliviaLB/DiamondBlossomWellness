@@ -102,7 +102,7 @@ const Swatch = ({ label }: { label: string }) => (
 /** Renders a plain `<div>` by default - same starting point as MUI's `Box`. */
 export const Default: Story = {
   render: (args) => (
-    <Box {...args} className="rounded border border-line p-4">
+    <Box {...args} className="rounded border-tertiary-500 border-4 p-4" background="card">
       <span className="text-ink-primary">Just a div.</span>
     </Box>
   )
