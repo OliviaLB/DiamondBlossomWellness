@@ -31,7 +31,7 @@ type Story = StoryObj<typeof meta>;
 /** `label` sits above the field; the field itself uses `surface-sunken`, the same "recessed" token used elsewhere for wells/insets. */
 export const Default: Story = {
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Input {...args} />
     </div>
   )
@@ -41,7 +41,7 @@ export const Default: Story = {
 export const Required: Story = {
   args: { required: true },
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Input {...args} />
     </div>
   )
@@ -51,7 +51,7 @@ export const Required: Story = {
 export const WithHelperText: Story = {
   args: { helperText: 'As it should appear on your booking confirmation.' },
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Input {...args} />
     </div>
   )
@@ -67,7 +67,7 @@ export const WithError: Story = {
     errorMessage: 'Enter a valid email address.'
   },
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Input {...args} />
     </div>
   )
@@ -76,7 +76,7 @@ export const WithError: Story = {
 /** `startIcon`/`endIcon` place arbitrary content inside the field. */
 export const WithIcons: Story = {
   render: () => (
-    <div className="flex max-w-sm flex-col gap-4 bg-surface-app p-6">
+    <div className="flex max-w-sm flex-col gap-4 p-6">
       <Input
         label="Search treatments"
         placeholder="Facial, massage..."
@@ -96,7 +96,7 @@ export const WithIcons: Story = {
 /** Every `size`. */
 export const Sizes: Story = {
   render: () => (
-    <div className="flex max-w-sm flex-col gap-4 bg-surface-app p-6">
+    <div className="flex max-w-sm flex-col gap-4 p-6">
       <Input size="sm" label="Small" placeholder="Small" />
       <Input size="md" label="Medium" placeholder="Medium" />
       <Input size="lg" label="Large" placeholder="Large" />
@@ -107,7 +107,7 @@ export const Sizes: Story = {
 /** `disabled`/`readOnly` side by side - `disabled` dims and blocks focus entirely, `readOnly` stays focusable/selectable but can't be edited. */
 export const DisabledAndReadOnly: Story = {
   render: () => (
-    <div className="flex max-w-sm flex-col gap-4 bg-surface-app p-6">
+    <div className="flex max-w-sm flex-col gap-4 p-6">
       <Input label="Disabled" defaultValue="Can't touch this" disabled />
       <Input label="Read only" defaultValue="Locked in" readOnly />
     </div>
@@ -121,7 +121,7 @@ export const Controlled: Story = {
       const [value, setValue] = useState('');
 
       return (
-        <div className="max-w-sm bg-surface-app p-6">
+        <div className="max-w-sm p-6">
           <Input
             label="Notes"
             placeholder="Anything we should know?"
@@ -142,7 +142,7 @@ export const FullWidth: Story = {
   args: { fullWidth: true },
   parameters: { layout: 'fullscreen' },
   render: (args) => (
-    <div className="bg-surface-app p-6">
+    <div className="p-6">
       <Input {...args} />
     </div>
   )

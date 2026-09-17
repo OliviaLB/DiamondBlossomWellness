@@ -1,14 +1,13 @@
-import { addons } from 'storybook/manager-api';
-import { create } from 'storybook/theming';
+import { create, themes } from 'storybook/theming';
 
 /**
- * Themes the Storybook chrome (sidebar, toolbar, docs page) to match the
- * app's navy palette - see themeColours.css. Unlike the "Theme" toolbar
- * toggle in preview.tsx (which only affects story content inside the
- * preview iframe), this controls the manager UI itself, which otherwise
- * stays on Storybook's default light theme regardless of that toggle.
+ * Shared theme objects used everywhere a theme is needed: the manager UI
+ * (sidebar, toolbar) via storybook-dark-mode, and the addon-docs
+ * DocsContainer via the ThemedDocsContainer in preview.tsx - each pulls its
+ * theme from a different place, so both need the same objects passed in
+ * explicitly rather than relying on one to imply the other.
  */
-const theme = create({
+export const darkTheme = create({
   base: 'dark',
   brandTitle: 'Diamond Blossom Wellness',
 
@@ -36,4 +35,13 @@ const theme = create({
   inputBorderRadius: 6
 });
 
-addons.setConfig({ theme });
+/**
+ * The design system doesn't have a real light palette yet (no `.dark`
+ * overrides exist in themeColours.css - the app is navy-branded regardless
+ * of theme), so light mode just brands Storybook's own default light theme
+ * rather than inventing colours the product doesn't have.
+ */
+export const lightTheme = create({
+  ...themes.normal,
+  brandTitle: 'Diamond Blossom Wellness'
+});

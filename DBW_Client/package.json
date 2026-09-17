@@ -63,6 +63,7 @@
     "playwright": "latest",
     "postcss": "^8.5.26",
     "storybook": "^10.5.10",
+    "storybook-dark-mode": "^5.0.0",
     "tailwindcss": "^4.3.3",
     "typescript": "~6.0.3",
     "typescript-eslint": "^8.68.0",

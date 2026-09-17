@@ -17,7 +17,7 @@ type Story = StoryObj<typeof meta>;
 export const Helper: Story = {
   args: { helperText: "We'll send your confirmation here." },
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <HelperText {...args} />
     </div>
   )
@@ -27,7 +27,7 @@ export const Helper: Story = {
 export const ErrorState: Story = {
   args: { errorMessage: 'Enter a valid email address.' },
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <HelperText {...args} />
     </div>
   )
@@ -40,7 +40,7 @@ export const ErrorWinsOverHelper: Story = {
     errorMessage: 'Enter a valid email address.'
   },
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <HelperText {...args} />
     </div>
   )
@@ -49,7 +49,7 @@ export const ErrorWinsOverHelper: Story = {
 /** With neither set, `HelperText` renders nothing at all - no empty spacing left behind. */
 export const Empty: Story = {
   render: () => (
-    <div className="max-w-sm border border-dashed border-line-primary bg-surface-app p-6">
+    <div className="max-w-sm border border-dashed border-line-primary p-6">
       <HelperText />
     </div>
   )

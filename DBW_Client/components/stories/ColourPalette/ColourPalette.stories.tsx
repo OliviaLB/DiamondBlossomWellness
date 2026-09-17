@@ -155,7 +155,7 @@ type Story = StoryObj<typeof meta>;
 /** Every brand, status, surface, and ink colour token defined in `src/themeColours.css`, rendered as swatch cards. */
 export const Palette: Story = {
   render: () => (
-    <div className="flex flex-col gap-8 bg-surface-app p-6">
+    <div className="flex flex-col gap-8 p-6">
       {GROUPS.map((group) => (
         <PaletteRow key={group.title} {...group} />
       ))}

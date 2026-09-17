@@ -28,7 +28,7 @@ export const Default: Story = {};
 /** Every `severity`, each with its own default icon. */
 export const Severities: Story = {
   render: () => (
-    <div className="flex max-w-lg flex-col gap-3 bg-surface-app p-6">
+    <div className="flex max-w-lg flex-col gap-3 p-6">
       <Alert severity="info" title="Heads up">
         Your therapist may run a few minutes behind today.
       </Alert>
@@ -49,7 +49,7 @@ export const Severities: Story = {
 export const MessageOnly: Story = {
   args: { title: undefined, children: 'Bookings open Tuesday - Saturday.' },
   render: (args) => (
-    <div className="max-w-lg bg-surface-app p-6">
+    <div className="max-w-lg p-6">
       <Alert {...args} />
     </div>
   )
@@ -59,7 +59,7 @@ export const MessageOnly: Story = {
 export const WithoutIcon: Story = {
   args: { icon: null },
   render: (args) => (
-    <div className="max-w-lg bg-surface-app p-6">
+    <div className="max-w-lg p-6">
       <Alert {...args} />
     </div>
   )
@@ -73,14 +73,14 @@ export const Dismissible: Story = {
 
       if (!visible) {
         return (
-          <div className="max-w-lg bg-surface-app p-6">
+          <div className="max-w-lg p-6">
             <Button size="sm" tone="secondary" label="Show alert again" onClick={() => setVisible(true)} />
           </div>
         );
       }
 
       return (
-        <div className="max-w-lg bg-surface-app p-6">
+        <div className="max-w-lg p-6">
           <Alert severity="warning" title="Limited availability" onClose={() => setVisible(false)}>
             Only two slots left this week for this treatment.
           </Alert>

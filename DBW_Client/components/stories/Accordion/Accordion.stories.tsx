@@ -51,31 +51,19 @@ type Story = StoryObj<typeof meta>;
 
 /** `mode="single"` (the default) - opening an item closes whichever other item was open. The fourth item is `disabled`. */
 export const Default: Story = {
-  render: (args) => (
-    <div className="mx-auto max-w-xl bg-surface-app p-6">
-      <Accordion {...args} />
-    </div>
-  )
+  render: (args) => <Accordion {...args} />
 };
 
 /** `mode="multiple"` - every item opens and closes independently. */
 export const Multiple: Story = {
   args: { mode: 'multiple' },
-  render: (args) => (
-    <div className="mx-auto max-w-xl bg-surface-app p-6">
-      <Accordion {...args} />
-    </div>
-  )
+  render: (args) => <Accordion {...args} />
 };
 
 /** `defaultOpenIds` starts one or more items open, uncontrolled from there. */
 export const DefaultOpen: Story = {
   args: { defaultOpenIds: ['first-visit'] },
-  render: (args) => (
-    <div className="mx-auto max-w-xl bg-surface-app p-6">
-      <Accordion {...args} />
-    </div>
-  )
+  render: (args) => <Accordion {...args} />
 };
 
 /** Controlled via `openIds`/`onOpenIdsChange` - the parent owns which item is open, here mirrored in the text below. */
@@ -85,7 +73,7 @@ export const Controlled: Story = {
       const [openIds, setOpenIds] = useState<string[]>(['first-visit']);
 
       return (
-        <div className="mx-auto flex max-w-xl flex-col gap-3 bg-surface-app p-6">
+        <div className="mx-auto flex max-w-xl flex-col gap-3 p-6">
           <p className="font-body text-xs text-ink-muted">Open: {openIds.length ? openIds.join(', ') : 'none'}</p>
           <Accordion {...args} openIds={openIds} onOpenIdsChange={setOpenIds} />
         </div>

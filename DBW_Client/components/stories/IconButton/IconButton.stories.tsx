@@ -29,7 +29,7 @@ type Story = StoryObj<typeof meta>;
 /** `contained` (the default) - hover a swatch to see the darker shade crossfade in. */
 export const Contained: Story = {
   render: (args) => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <IconButton {...args} tone="primary" />
       <IconButton {...args} tone="secondary" />
       <IconButton {...args} tone="tertiary" />
@@ -40,7 +40,7 @@ export const Contained: Story = {
 /** `outlined` - border + icon in the tone's colour; on hover the background fills with that colour. */
 export const Outlined: Story = {
   render: (args) => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <IconButton {...args} variant="outlined" tone="primary" />
       <IconButton {...args} variant="outlined" tone="secondary" />
       <IconButton {...args} variant="outlined" tone="tertiary" />
@@ -51,7 +51,7 @@ export const Outlined: Story = {
 /** `text` - icon only; on hover a soft tinted circle crossfades in behind it. */
 export const Text: Story = {
   render: (args) => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <IconButton {...args} variant="text" tone="primary" />
       <IconButton {...args} variant="text" tone="secondary" />
       <IconButton {...args} variant="text" tone="tertiary" />
@@ -62,7 +62,7 @@ export const Text: Story = {
 /** `disabled` overrides every variant with the same `accent-300` background / `accent-600` icon colour, regardless of `tone`. */
 export const Disabled: Story = {
   render: (args) => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <IconButton {...args} variant="contained" disabled />
       <IconButton {...args} variant="outlined" disabled />
       <IconButton {...args} variant="text" disabled />
@@ -73,7 +73,7 @@ export const Disabled: Story = {
 /** Every `size`, at the default `contained` variant. */
 export const Sizes: Story = {
   render: (args) => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <IconButton {...args} size="xs" />
       <IconButton {...args} size="sm" />
       <IconButton {...args} size="md" />
@@ -86,7 +86,7 @@ export const Sizes: Story = {
 /** `borderRadius` overrides the default `full` (circular) footprint - here rounded to a square "app icon" shape instead. */
 export const SquareRadius: Story = {
   render: (args) => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <IconButton {...args} borderRadius="lg" />
     </div>
   )

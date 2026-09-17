@@ -10,13 +10,13 @@ import type { ChipColour, ChipProps, ChipSize } from './Chip.types';
  * chip still reads as "soft" against the dark app background.
  */
 export const CHIP_COLOUR: Record<ChipColour, string> = {
-  neutral: 'border-line-primary bg-surface-card text-ink-secondary',
-  primary: 'border-primary-400/40 bg-primary-400/10 text-primary-400',
-  secondary: 'border-secondary-400/40 bg-secondary-400/10 text-secondary-400',
-  tertiary: 'border-tertiary-400/40 bg-tertiary-400/10 text-tertiary-400',
-  success: 'border-success-edge bg-success-subtle text-success-ink',
-  warning: 'border-warning-edge bg-warning-subtle text-warning-ink',
-  danger: 'border-danger-edge bg-danger-subtle text-danger-ink'
+  neutral: 'border-line-primary bg-surface-card text-ink-secondary border-2',
+  primary: 'border-primary-400 bg-primary-400/10 text-primary-300  border-2',
+  secondary: 'border-secondary-400 bg-secondary-400/10 text-secondary-300 border-2',
+  tertiary: 'border-tertiary-400 bg-tertiary-400/10 text-tertiary-400 border-2',
+  success: 'border-success-edge bg-success-subtle text-success-ink border-2',
+  warning: 'border-warning-edge bg-warning-subtle text-warning-ink border-2',
+  danger: 'border-danger-edge bg-danger-subtle text-danger-ink border-2'
 };
 
 export const CHIP_SIZE: Record<ChipSize, string> = {
@@ -28,7 +28,7 @@ export const CHIP_SIZE: Record<ChipSize, string> = {
 const INTERACTIVE_CLASSES =
   'cursor-pointer outline-2 outline-offset-1 outline-transparent transition-[outline-offset,outline-color,filter] duration-200 ease-out hover:brightness-125 focus-visible:outline-secondary-400 focus-visible:outline-offset-4';
 
-const DISABLED_CLASSES = 'cursor-not-allowed border-line-disabled! bg-surface-disabled! text-ink-disabled!';
+const DISABLED_CLASSES = 'cursor-not-allowed border-line-disabled! bg-surface-disabled! text-ink-disabled! border-2!';
 
 type ChipClassNameProps = Pick<ChipProps, 'colour' | 'disabled' | 'onClick' | 'size'>;
 

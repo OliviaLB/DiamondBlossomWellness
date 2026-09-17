@@ -30,7 +30,7 @@ type Story = StoryObj<typeof meta>;
 /** `contained` (the default) - hover a swatch to see the darker shade wipe in from the top. */
 export const Contained: Story = {
   render: () => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <Button variant="contained" tone="primary" label="Primary" />
       <Button variant="contained" tone="secondary" label="Secondary" />
       <Button variant="contained" tone="tertiary" label="Tertiary" />
@@ -41,7 +41,7 @@ export const Contained: Story = {
 /** `outlined` - border + label in the tone's colour; on hover the background fills with that colour. */
 export const Outlined: Story = {
   render: () => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <Button variant="outlined" tone="primary" label="Primary" />
       <Button variant="outlined" tone="secondary" label="Secondary" />
       <Button variant="outlined" tone="tertiary" label="Tertiary" />
@@ -52,7 +52,7 @@ export const Outlined: Story = {
 /** `text` - label only; on hover an underline grows out from the centre. */
 export const Text: Story = {
   render: () => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <Button variant="text" tone="primary" label="Primary" />
       <Button variant="text" tone="secondary" label="Secondary" />
       <Button variant="text" tone="tertiary" label="Tertiary" />
@@ -63,7 +63,7 @@ export const Text: Story = {
 /** `disabled` overrides every variant with the same `accent-300` background / `accent-600` text, regardless of `tone`. */
 export const Disabled: Story = {
   render: () => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <Button variant="contained" disabled label="Contained" />
       <Button variant="outlined" disabled label="Outlined" />
       <Button variant="text" disabled label="Text" />
@@ -74,7 +74,7 @@ export const Disabled: Story = {
 /** Every `size`, at the default `contained` variant. */
 export const Sizes: Story = {
   render: () => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <Button size="xs" label="Extra small" />
       <Button size="sm" label="Small" />
       <Button size="md" label="Medium" />
@@ -87,7 +87,7 @@ export const Sizes: Story = {
 /** `startIcon`/`endIcon` place arbitrary content either side of the label. */
 export const WithIcons: Story = {
   render: () => (
-    <div className="flex flex-wrap items-center gap-4 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-4 p-6">
       <Button label="Confirm" startIcon={<FontAwesomeIcon icon={faCheck} />} />
       <Button variant="outlined" tone="secondary" label="Next" endIcon={<FontAwesomeIcon icon={faArrowRight} />} />
     </div>
@@ -98,7 +98,7 @@ export const WithIcons: Story = {
 export const FullWidth: Story = {
   parameters: { layout: 'fullscreen' },
   render: () => (
-    <div className="bg-surface-app p-6">
+    <div className="p-6">
       <Button fullWidth label="Full width" />
     </div>
   )

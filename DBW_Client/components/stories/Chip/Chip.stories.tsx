@@ -28,7 +28,7 @@ type Story = StoryObj<typeof meta>;
 /** Every `colour` - `success`/`warning`/`danger` match the status badges already used on `HomeView`. */
 export const Colours: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-2 bg-surface-app p-6">
+    <div className="flex flex-wrap gap-2 p-6">
       <Chip colour="neutral" label="Neutral" />
       <Chip colour="primary" label="Primary" />
       <Chip colour="secondary" label="Secondary" />
@@ -43,7 +43,7 @@ export const Colours: Story = {
 /** `sm`/`md` sizes. */
 export const Sizes: Story = {
   render: () => (
-    <div className="flex flex-wrap items-center gap-2 bg-surface-app p-6">
+    <div className="flex flex-wrap items-center gap-2 p-6">
       <Chip size="sm" colour="secondary" label="Small" />
       <Chip size="md" colour="secondary" label="Medium" />
     </div>
@@ -53,7 +53,7 @@ export const Sizes: Story = {
 /** `icon` places arbitrary content before the label - a status dot, here. */
 export const WithIcon: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-2 bg-surface-app p-6">
+    <div className="flex flex-wrap gap-2 p-6">
       <Chip colour="success" label="Online" icon={<span className="h-1.5 w-1.5 rounded-full bg-success-ink" />} />
       <Chip colour="danger" label="Offline" icon={<span className="h-1.5 w-1.5 rounded-full bg-danger-ink" />} />
     </div>
@@ -67,7 +67,7 @@ export const Clickable: Story = {
       const [count, setCount] = useState(0);
 
       return (
-        <div className="flex flex-col items-start gap-3 bg-surface-app p-6">
+        <div className="flex flex-col items-start gap-3 p-6">
           <p className="font-body text-xs text-ink-muted">Clicked {count} time(s)</p>
           <Chip colour="primary" label="Click me" onClick={() => setCount((current) => current + 1)} />
         </div>
@@ -85,7 +85,7 @@ export const Removable: Story = {
       const [tags, setTags] = useState(['Facials', 'Massage', 'Body wraps']);
 
       return (
-        <div className="flex flex-wrap gap-2 bg-surface-app p-6">
+        <div className="flex flex-wrap gap-2 p-6">
           {tags.map((tag) => (
             <Chip
               key={tag}
@@ -116,7 +116,7 @@ export const ClickableAndRemovable: Story = {
 /** `disabled` drops both `onClick` and `onRemove` and dims the chip. */
 export const Disabled: Story = {
   render: () => (
-    <div className="flex flex-wrap gap-2 bg-surface-app p-6">
+    <div className="flex flex-wrap gap-2 p-6">
       <Chip colour="secondary" label="Disabled" disabled onClick={() => undefined} onRemove={() => undefined} />
     </div>
   )

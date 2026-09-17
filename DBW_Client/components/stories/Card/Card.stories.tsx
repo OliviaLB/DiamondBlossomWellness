@@ -34,7 +34,7 @@ type Story = StoryObj<typeof meta>;
  */
 export const Default: Story = {
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Card {...args}>
         <CardHeader title="Signature Facial" subtitle="60 minutes" />
         <CardContent>
@@ -48,7 +48,7 @@ export const Default: Story = {
 /** Any raw content works as a child - here a plain `<img>`-style placeholder, first, renders full-bleed and clips to `borderRadius` since `Card` applies no padding of its own. */
 export const WithMedia: Story = {
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Card {...args}>
         <Placeholder label="Treatment photo" />
         <CardHeader title="Signature Facial" subtitle="60 minutes" />
@@ -63,7 +63,7 @@ export const WithMedia: Story = {
 /** `CardFooter` sits in its own row beneath a divider - action buttons are the common case. */
 export const WithFooterActions: Story = {
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Card {...args}>
         <Placeholder label="Treatment photo" />
         <CardHeader title="Signature Facial" subtitle="60 minutes" />
@@ -91,7 +91,7 @@ export const Interactive: Story = {
     onClick: () => alert('Card activated')
   },
   render: (args) => (
-    <div className="max-w-sm bg-surface-app p-6">
+    <div className="max-w-sm p-6">
       <Card {...args}>
         <Placeholder label="Treatment photo" />
         <CardHeader title="Signature Facial" subtitle="60 minutes" />
@@ -115,7 +115,7 @@ export const Interactive: Story = {
 /** Three cards side by side, the common "treatment list" layout. */
 export const Grid: Story = {
   render: () => (
-    <div className="grid grid-cols-1 gap-6 bg-surface-app p-6 sm:grid-cols-3">
+    <div className="grid grid-cols-1 gap-6 p-6 sm:grid-cols-3">
       <Card>
         <Placeholder label="Facial" />
         <CardHeader title="Signature Facial" subtitle="60 minutes" />

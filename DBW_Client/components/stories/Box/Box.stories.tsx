@@ -85,7 +85,7 @@ const Swatch = ({ label }: { label: string }) => (
 /** Renders a plain `<div>` by default - same starting point as MUI's `Box`. */
 export const Default: Story = {
   render: (args) => (
-    <Box {...args} className="rounded border-tertiary-500 border-4 p-4" background="card">
+    <Box {...args} className="rounded border-tertiary-500 border-4 p-4">
       <span className="text-ink-primary">Just a div.</span>
     </Box>
   )
@@ -97,7 +97,7 @@ export const Default: Story = {
  */
 export const PolymorphicTag: Story = {
   render: (args) => (
-    <Box {...args} as="section" className="rounded border border-line-primary p-4" background="card">
+    <Box {...args} as="section" className="rounded border border-line-primary p-4">
       <span className="text-ink-primary">Rendered as a &lt;section&gt;.</span>
     </Box>
   )
@@ -112,7 +112,7 @@ export const FlexLayout: Story = {
     gap: '2x'
   },
   render: (args) => (
-    <Box {...args} className="rounded border border-line-primary p-4" background="card">
+    <Box {...args} className="rounded border border-line-primary p-4">
       <Swatch label="A" />
       <Swatch label="B" />
       <Swatch label="C" />
@@ -129,7 +129,7 @@ export const FlexColumn: Story = {
     gap: '2x'
   },
   render: (args) => (
-    <Box {...args} className="rounded border border-line-primary p-4" background="card">
+    <Box {...args} className="rounded border border-line-primary p-4">
       <Swatch label="A" />
       <Swatch label="B" />
       <Swatch label="C" />
@@ -148,7 +148,7 @@ export const FullWidth: Story = {
     fullWidth: true
   },
   render: (args) => (
-    <Box {...args} className="border border-dashed border-line-primary p-4" background="card">
+    <Box {...args} className="border border-dashed border-line-primary p-4">
       <span className="text-ink-primary">Fills its container.</span>
     </Box>
   )
@@ -166,7 +166,7 @@ export const FullScreen: Story = {
     fullScreen: true
   },
   render: (args) => (
-    <Box {...args} background="app">
+    <Box {...args}>
       <Swatch label="1:1" />
     </Box>
   )

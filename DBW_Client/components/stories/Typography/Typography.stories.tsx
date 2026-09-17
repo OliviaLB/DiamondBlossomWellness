@@ -32,7 +32,7 @@ type Story = StoryObj<typeof meta>;
 export const Default: Story = {
   args: {
     children: 'The quick brown fox jumps over the lazy dog.',
-    className: 'bg-surface-app p-4'
+    className: 'p-4'
   }
 };
 
@@ -42,7 +42,7 @@ export const Default: Story = {
  */
 export const AllVariants: Story = {
   render: () => (
-    <div className="flex flex-col gap-2 bg-surface-app">
+    <div className="flex flex-col gap-2">
       <Typography variant="h1">h1. The quick brown fox</Typography>
       <Typography variant="h2">h2. The quick brown fox</Typography>
       <Typography variant="h3">h3. The quick brown fox</Typography>
@@ -68,7 +68,7 @@ export const AllVariants: Story = {
  */
 export const LabelAndButtonInContext: Story = {
   render: () => (
-    <div className="flex flex-col gap-4 bg-surface-app p-4">
+    <div className="flex flex-col gap-4 p-4">
       <label className="inline-flex items-center gap-2">
         <input type="checkbox" />
         <Typography as="span" variant="label">
@@ -151,14 +151,14 @@ export const ResponsiveHeading: Story = {
   args: {
     variant: 'h1',
     children: 'Responsive & bold',
-    className: 'bg-surface-app p-4'
+    className: 'p-4'
   }
 };
 
 /** `textAlign` sets horizontal alignment. */
 export const TextAlignment: Story = {
   render: () => (
-    <div className="flex flex-col gap-2 bg-surface-app p-4">
+    <div className="flex flex-col gap-2 p-4">
       <Typography textAlign="left">Left aligned</Typography>
       <Typography textAlign="center">Center aligned</Typography>
       <Typography textAlign="right">Right aligned</Typography>
@@ -175,14 +175,14 @@ export const NoWrap: Story = {
   args: {
     noWrap: true,
     children: 'This is a very long line of text that will be truncated with an ellipsis instead of wrapping.',
-    className: 'max-w-xs border border-dashed border-line-primary bg-surface-app p-4'
+    className: 'max-w-xs border border-dashed border-line-primary p-4'
   }
 };
 
 /** `gutterBottom` adds space below - handy for a heading immediately followed by body copy. */
 export const GutterBottom: Story = {
   render: () => (
-    <div className="border border-dashed border-line-primary p-2 bg-surface-app">
+    <div className="border border-dashed border-line-primary p-2">
       <Typography variant="h4" gutterBottom>
         Section title
       </Typography>
@@ -199,7 +199,7 @@ export const GutterBottom: Story = {
  */
 export const Animated: Story = {
   render: (args) => (
-    <div className="bg-surface-app p-4">
+    <div className="p-4">
       <style>{`
         @keyframes typography-story-pulse {
           0%, 100% { opacity: 1; }

@@ -107,7 +107,7 @@
   --ink-secondary: #b9bcd4; /* body copy, subdued */
   --ink-contrast: #08090f; /* text on light surfaces */
   --ink-muted: #7b7fa0; /* captions, metadata */
-  --ink-disabled: #82889f; /* disabled text */
+  --ink-disabled: #5f6478; /* disabled text */
   --ink-link: var(--color-secondary-400);
   --ink-link-hover: var(--color-secondary-500);
 

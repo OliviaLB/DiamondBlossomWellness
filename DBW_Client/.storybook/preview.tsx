@@ -1,14 +1,20 @@
-import { useEffect } from 'react';
+import type { ComponentProps } from 'react';
 import type { Preview } from '@storybook/react-vite';
+import { DocsContainer } from '@storybook/addon-docs/blocks';
+import { useDarkMode } from 'storybook-dark-mode';
+import { darkTheme, lightTheme } from './theme';
 import '../src/index.css';
 
 /**
- * Toolbar toggle applying the same `dark` class on `<html>` that
- * `useDarkMode` (components/theme/useDarkMode.ts) uses in the real app -
- * so every `dark:` utility in the design system renders identically here
- * as it would there. Pick "Dark" from the "Theme" toolbar item to preview
- * any story in dark mode.
+ * addon-docs renders the Docs page (headings, description, args table) with
+ * its own theme, independent of the manager theme storybook-dark-mode sets -
+ * so it needs to follow the same toggle and pick a theme itself.
  */
+function ThemedDocsContainer(props: ComponentProps<typeof DocsContainer>) {
+  const isDark = useDarkMode();
+  return <DocsContainer {...props} theme={isDark ? darkTheme : lightTheme} />;
+}
+
 const preview: Preview = {
   parameters: {
     controls: { matchers: { color: /(background|color)$/i, date: /Date$/i } },
@@ -18,45 +24,21 @@ const preview: Preview = {
       // 'off' - skip a11y checks entirely
       test: 'todo'
     },
-    backgrounds: {
-      // Hex values mirror --surface-app / --surface-canvas in themeColours.css.
-      // Hardcoded rather than var(...) because the backgrounds toolbar renders
-      // in the manager UI, which doesn't have access to the preview iframe's CSS.
-      default: 'app',
-      options: {
-        app: { name: 'App', value: '#080a1f' },
-        canvas: { name: 'Canvas', value: '#0f1233' }
-      }
+    docs: { container: ThemedDocsContainer },
+    // storybook-dark-mode's sun/moon toolbar toggle. `stylePreview` applies
+    // `darkClass`/`lightClass` to the preview iframe's `<html>` directly -
+    // the same class `useDarkMode` (components/theme/useDarkMode.ts) will
+    // toggle in the real app, so `dark:` utilities render identically here.
+    darkMode: {
+      current: 'dark',
+      dark: darkTheme,
+      light: lightTheme,
+      classTarget: 'html',
+      darkClass: 'dark',
+      lightClass: 'light',
+      stylePreview: true
     }
-  },
-  globalTypes: {
-    theme: {
-      description: 'Colour scheme',
-      toolbar: {
-        title: 'Theme',
-        icon: 'circlehollow',
-        items: [
-          { value: 'light', icon: 'sun', title: 'Light' },
-          { value: 'dark', icon: 'moon', title: 'Dark' }
-        ],
-        dynamicTitle: true
-      }
-    }
-  },
-  initialGlobals: {
-    theme: 'dark'
-  },
-  decorators: [
-    (Story, context) => {
-      const isDark = context.globals.theme === 'dark';
-
-      useEffect(() => {
-        document.documentElement.classList.toggle('dark', isDark);
-      }, [isDark]);
-
-      return <Story />;
-    }
-  ]
+  }
 };
 
 export default preview;

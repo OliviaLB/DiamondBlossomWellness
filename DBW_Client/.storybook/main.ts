@@ -10,7 +10,7 @@ const config: StorybookConfig = {
     '../components/**/*.mdx',
     '../components/**/*.stories.@(js|jsx|mjs|ts|tsx)'
   ],
-  addons: ['@storybook/addon-a11y', '@storybook/addon-docs'],
+  addons: ['@storybook/addon-a11y', '@storybook/addon-docs', 'storybook-dark-mode'],
   framework: {
     name: '@storybook/react-vite',
     options: {}

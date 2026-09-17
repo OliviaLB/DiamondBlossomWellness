@@ -61,7 +61,7 @@ type Story = StoryObj<typeof meta>;
 /** The three font stacks defined in `src/themeColours.css` (`--font-display`/`--font-heading`/`--font-body`), each shown with its role, available weights, and a sample. */
 export const Families: Story = {
   render: () => (
-    <div className="flex flex-col gap-6 bg-surface-app p-6">
+    <div className="flex flex-col gap-6 p-6">
       {FAMILIES.map((family) => (
         <FontCard key={family.name} {...family} />
       ))}
@@ -72,7 +72,7 @@ export const Families: Story = {
 /** The pairing in practice, via the `Typography` component's own variant → font mapping (`VARIANT_FONT` in `Typography.styles.ts`). */
 export const Pairing: Story = {
   render: () => (
-    <div className="flex flex-col items-center gap-3 bg-surface-app px-6 py-16 text-center">
+    <div className="flex flex-col items-center gap-3 px-6 py-16 text-center">
       <Typography variant="subtitle2" colour="secondary" className="tracking-[0.3em] uppercase">
         Diamond Blossom Wellness
       </Typography>
