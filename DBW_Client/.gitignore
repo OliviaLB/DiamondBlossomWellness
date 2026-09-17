@@ -5,3 +5,4 @@ dist-ssr
 coverage
 storybook-static
 src/routeTree.gen.ts
+.tanstack

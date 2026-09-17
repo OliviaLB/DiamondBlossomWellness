@@ -3,7 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function HomeView() {
   return (
-    <main className="flex min-h-screen flex-col items-center gap-6 bg-surface-app px-6 py-16 text-center">
+    <main className="flex min-h-screen flex-col items-center gap-6 bg-surface-app px-6 pt-32 pb-16 text-center">
       <p className="font-heading text-sm tracking-[0.3em] text-secondary-400 uppercase">Diamond Blossom Wellness</p>
 
       <h1 className="font-display text-5xl font-semibold text-ink-primary">Diamond Blossom Wellness</h1>
