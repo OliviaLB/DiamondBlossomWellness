@@ -1,7 +1,7 @@
 import clsx from 'clsx';
 
 const NAV_BASE_CLASSES =
-  'fixed inset-x-0 top-0 z-50 flex h-20 items-center justify-between gap-4 px-4 transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out sm:px-8';
+  'fixed inset-x-0 top-0 z-50 mx-auto flex h-20 max-w-[2000px] items-center justify-between gap-4 px-4 transition-[background-color,backdrop-filter,border-color,box-shadow] duration-300 ease-out sm:px-8';
 
 const NAV_TRANSPARENT_CLASSES = 'border-b border-transparent bg-transparent';
 
