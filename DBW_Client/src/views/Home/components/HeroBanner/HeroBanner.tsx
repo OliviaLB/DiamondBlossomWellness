@@ -35,7 +35,7 @@ export const HeroBanner = () => {
           Restore. Renew. Radiate.
         </Typography>
 
-        <Typography variant="body1" colour="secondary" className={BODY_CLASSES} textAlign="center">
+        <Typography variant="body1" colour="secondary" className={BODY_CLASSES} textAlign="justify">
           Signature Japanese head spa rituals, considered facials and therapeutic massage - delivered in a calm, private
           space held to a premium standard.
         </Typography>

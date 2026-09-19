@@ -1,6 +1,6 @@
 import type { NavLinkItem } from '../../components';
 
-export const BUSINESS_NAME = 'Diamond Blossom Wellness';
+export { BUSINESS_NAME } from '@constants/business';
 
 export const NAV_LINKS: NavLinkItem[] = [
   { label: 'Home', to: '/' },

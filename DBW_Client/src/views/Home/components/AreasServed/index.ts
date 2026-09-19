@@ -1,0 +1,1 @@
+export { AreasServed } from './AreasServed';

@@ -1,3 +1,5 @@
+import { SERVICE_AREAS_TEXT } from './business';
+
 export interface PriceOption {
   id: string;
   label: string;
@@ -14,6 +16,8 @@ export interface Treatment {
   summary: string;
   /** Path of the treatment photo, relative to `public/`. Compressed copies (1600px wide) - keep the full-size originals out of `public/`. */
   imageName: string;
+  /** Meta description for this treatment's own search result (keep under ~160 characters). */
+  seoDescription: string;
   /** Longer copy for the services page, one entry per paragraph. */
   about: string[];
   /** Short "what's involved" bullets. */
@@ -49,6 +53,7 @@ export const TREATMENTS: Treatment[] = [
     summary:
       'A slow, sensory ritual of warm oil, deep scalp massage and a gentle cleanse. Tension melts away, leaving hair glossy, light and revived.',
     imageName: 'treatments/japanese-head-spa.jpg',
+    seoDescription: `Japanese head spa for ${SERVICE_AREAS_TEXT} - warm oil, deep scalp massage and a gentle cleanse for glossy, revived hair and a calmer mind.`,
     about: [
       'Rooted in Japanese tradition, the head spa is a slow, sensory ritual for both scalp and mind. Warm oil is worked in with deep, rhythmic massage, before a gentle cleanse leaves the scalp refreshed and the hair glossy and light.',
       'It is as much about switching off as it is about your hair. Come with nothing to do but unwind.'
@@ -71,6 +76,7 @@ export const TREATMENTS: Treatment[] = [
     summary:
       'Warmth, steam and deep hydration work together to nourish the scalp and hair, leaving them balanced, soft and visibly refreshed.',
     imageName: 'treatments/hydrotherm-3d.jpg',
+    seoDescription: `Hydrotherm 3D scalp and hair treatment for ${SERVICE_AREAS_TEXT} - warmth, steam and deep hydration for balanced, soft, refreshed hair.`,
     about: [
       'Hydrotherm 3D pairs gentle warmth and steam with deep hydration, caring for the scalp and the hair together. The result is a scalp that feels balanced and hair that looks soft and visibly refreshed.',
       'A lovely choice if your hair feels dry or dull, or as a companion to a head spa.'
@@ -87,6 +93,7 @@ export const TREATMENTS: Treatment[] = [
     summary:
       'Tailored to your skin and made with considered, premium products, to cleanse, nourish and restore a calm, healthy glow.',
     imageName: 'treatments/facials.jpg',
+    seoDescription: `Tailored facials with premium products for ${SERVICE_AREAS_TEXT} - cleanse, nourish and restore a calm, healthy glow.`,
     about: [
       'Every facial is tailored to your skin on the day, using considered, premium products to cleanse, nourish and restore a calm, healthy glow.',
       'Tell us how your skin feels and what you would like to achieve, and we will shape the treatment around you.'
@@ -109,6 +116,7 @@ export const TREATMENTS: Treatment[] = [
     summary:
       'Focused pressure-point work to release tension, encourage circulation and quieten a busy mind. A restorative reset in its own right.',
     imageName: 'treatments/scalp-massage.jpg',
+    seoDescription: `Scalp massage near ${SERVICE_AREAS_TEXT} - focused pressure-point work to release tension, encourage circulation and quieten a busy mind.`,
     about: [
       'Focused pressure-point work releases the tension held in the scalp, neck and temples, encouraging circulation and quietening a busy mind.',
       'A restorative reset in its own right - ideal when you want to unwind without a full head spa, or as a top-up between rituals.'
@@ -130,6 +138,7 @@ export const TREATMENTS: Treatment[] = [
     summary:
       'A flowing full-body massage with light to medium pressure, adapted to you on the day, to soothe tired muscles and settle the mind.',
     imageName: 'treatments/relaxation-massage.jpg',
+    seoDescription: `Relaxation massage near ${SERVICE_AREAS_TEXT} - a flowing full-body massage to soothe tired muscles and settle the mind.`,
     about: [
       'A flowing full-body massage using light to medium pressure, adapted to you on the day, to soothe tired muscles and settle the mind.',
       'Let us know where you are holding tension, or simply where you would like more time, and we will tailor the treatment as we go.'
@@ -151,6 +160,7 @@ export const TREATMENTS: Treatment[] = [
     summary:
       'Firm, focused work on knots and stubborn tension in the back, neck and shoulders. Ideal for tight muscles, desk-bound days and recovery.',
     imageName: 'treatments/deep-tissue-massage.jpg',
+    seoDescription: `Deep tissue massage near ${SERVICE_AREAS_TEXT} - firm, focused work on knots and tension in the back, neck and shoulders.`,
     about: [
       'Firm, focused work on knots and stubborn tension in the back, neck and shoulders. Ideal for tight muscles, desk-bound days and recovery.',
       'Pressure is firm but never forced - we work with your body, and you stay in control of how deep we go.'

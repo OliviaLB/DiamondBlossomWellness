@@ -1,7 +1,9 @@
 import { render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
+import { PAGES } from '@constants/pages';
 import { TREATMENTS } from '@constants/services';
+import { getTreatmentSeo } from '@utils/seo';
 import { renderWithRouter } from '../../../tests';
 import Services from './Services';
 
@@ -94,5 +96,28 @@ describe('Services', () => {
     render(renderWithRouter(<Services treatmentId="nope" />));
 
     expect(await screen.findByRole('tab', { name: TREATMENTS[0].title })).toHaveAttribute('aria-selected', 'true');
+  });
+
+  it('is titled as the whole menu when no treatment is chosen', async () => {
+    render(renderWithRouter(<Services />));
+
+    await screen.findByRole('heading', { name: 'Our Treatments' });
+
+    expect(document.title).toBe(PAGES.services.title);
+    expect(document.querySelector('script[type="application/ld+json"]')).toBeNull();
+  });
+
+  it('gives a chosen treatment its own title, description and structured data', async () => {
+    const facials = TREATMENTS.find(({ id }) => id === 'facials')!;
+    render(renderWithRouter(<Services treatmentId="facials" />));
+
+    await screen.findByRole('heading', { name: 'Our Treatments' });
+
+    expect(document.title).toBe(getTreatmentSeo(facials).title);
+    expect(document.head.querySelector('meta[name="description"]')).toHaveAttribute('content', facials.seoDescription);
+    expect(JSON.parse(document.querySelector('script[type="application/ld+json"]')?.textContent ?? '')).toMatchObject({
+      '@type': 'Service',
+      name: 'Facials'
+    });
   });
 });

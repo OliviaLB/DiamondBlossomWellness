@@ -5,7 +5,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, MotionConfig, motion } from 'motion/react';
 import { TREATMENTS } from '@constants/services';
 import { formatPrice } from '@utils/pricing';
-import Typography from '../../../../../components/stories/Typography/Typography';
+import { Typography } from '@components/Typography';
 import { ServicePricing } from '../ServicePricing';
 import {
   ABOUT_BLOCK_CLASSES,
@@ -149,7 +149,7 @@ export const ServiceShowcase = ({ onTreatmentChange, treatmentId }: ServiceShowc
                 {active.title}
               </Typography>
               {active.about.map((paragraph) => (
-                <Typography key={paragraph} variant="body1" colour="secondary">
+                <Typography key={paragraph} variant="body1" colour="secondary" textAlign="justify">
                   {paragraph}
                 </Typography>
               ))}
