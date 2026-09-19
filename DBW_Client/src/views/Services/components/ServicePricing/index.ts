@@ -1,1 +1,1 @@
-export { ServicePricing } from './ServicePricing';
+export { default as ServicePricing } from './ServicePricing';

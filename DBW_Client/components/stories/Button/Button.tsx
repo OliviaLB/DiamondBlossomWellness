@@ -32,7 +32,7 @@ import type { ButtonProps } from './Button.types';
  * `disabled` overrides every variant with the same `accent-300` background /
  * `accent-600` text and drops all hover/tap/focus behaviour.
  */
-export const Button = ({
+const Button = ({
   borderRadius = 'md',
   'data-testid': dataTestId,
   disabled = false,
@@ -118,3 +118,5 @@ export const Button = ({
     </motion.button>
   );
 };
+
+export default Button;

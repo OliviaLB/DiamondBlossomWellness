@@ -2,9 +2,9 @@ import { useEffect, useState } from 'react';
 import { faBars } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { Link } from '@tanstack/react-router';
-import { Drawer } from '../Drawer/Drawer';
-import { IconButton } from '../IconButton/IconButton';
-import { NavLink } from '../NavLink/NavLink';
+import { Drawer } from '../Drawer';
+import { IconButton } from '../IconButton';
+import { NavLink } from '../NavLink';
 import {
   BRAND_CLASSES,
   DESKTOP_LINKS_CLASSES,
@@ -28,7 +28,7 @@ const SCROLL_THRESHOLD = 8;
  * button into a `Drawer`, which closes itself again whenever a link inside
  * it is clicked.
  */
-export const Navbar = ({ businessName, 'data-testid': dataTestId, id, links }: NavbarProps) => {
+const Navbar = ({ businessName, 'data-testid': dataTestId, id, links }: NavbarProps) => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isDrawerOpen, setIsDrawerOpen] = useState(false);
 
@@ -74,3 +74,5 @@ export const Navbar = ({ businessName, 'data-testid': dataTestId, id, links }: N
     </nav>
   );
 };
+
+export default Navbar;

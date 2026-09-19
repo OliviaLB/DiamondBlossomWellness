@@ -2,7 +2,7 @@ import { useId, useState } from 'react';
 import { faChevronDown } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, LayoutGroup, motion } from 'motion/react';
-import Typography from '../Typography/Typography';
+import { Typography } from '../Typography';
 import { getAccordionClassName, PANEL_CONTENT_CLASSES, TRIGGER_CLASSES } from './Accordion.styles';
 import type { AccordionProps } from './Accordion.types';
 
@@ -19,7 +19,7 @@ import type { AccordionProps } from './Accordion.types';
  * open/close independently. Works both controlled (`openIds`/
  * `onOpenIdsChange`) and uncontrolled (`defaultOpenIds`).
  */
-export const Accordion = ({
+const Accordion = ({
   borderRadius = 'lg',
   'data-testid': dataTestId,
   defaultOpenIds = [],
@@ -104,3 +104,5 @@ export const Accordion = ({
     </LayoutGroup>
   );
 };
+
+export default Accordion;

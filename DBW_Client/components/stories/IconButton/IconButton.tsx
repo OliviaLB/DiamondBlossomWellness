@@ -26,7 +26,7 @@ import type { IconButtonProps } from './IconButton.types';
  * `disabled` overrides every variant with the same `accent-300` background /
  * `accent-600` icon colour and drops all hover/tap/focus behaviour.
  */
-export const IconButton = ({
+const IconButton = ({
   'aria-label': ariaLabel,
   borderRadius = 'full',
   'data-testid': dataTestId,
@@ -94,3 +94,5 @@ export const IconButton = ({
     </motion.button>
   );
 };
+
+export default IconButton;

@@ -1,1 +1,1 @@
-export { TreatmentsGrid } from './TreatmentsGrid';
+export { default as TreatmentsGrid } from './TreatmentsGrid';

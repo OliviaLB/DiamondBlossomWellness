@@ -1,1 +1,1 @@
-export { AreasServed } from './AreasServed';
+export { default as AreasServed } from './AreasServed';

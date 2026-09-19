@@ -1,7 +1,7 @@
 import { PAGES } from '@constants/pages';
-import { Seo } from '../components/Seo';
+import { Seo } from '@appComponents/Seo';
 
-export function Faq() {
+const Faq = () => {
   return (
     <main className="flex min-h-screen flex-col items-center gap-6 bg-surface-app px-6 pt-32 pb-16 text-center">
       <Seo {...PAGES.faq} />
@@ -16,4 +16,6 @@ export function Faq() {
       </p>
     </main>
   );
-}
+};
+
+export default Faq;

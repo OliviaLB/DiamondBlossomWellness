@@ -4,7 +4,10 @@ import type { AccordionProps } from './Accordion.types';
 
 /** Outer frame - the divider between items comes from `divide-y` on this container, not a border on each item. */
 export const getAccordionClassName = ({ borderRadius = 'lg' }: Pick<AccordionProps, 'borderRadius'>): string =>
-  clsx('divide-y divide-line-primary overflow-hidden border border-line-primary bg-surface-card', BORDERRADIUS[borderRadius]);
+  clsx(
+    'divide-y divide-line-primary overflow-hidden border border-line-primary bg-surface-card',
+    BORDERRADIUS[borderRadius]
+  );
 
 export const TRIGGER_CLASSES =
   'flex w-full items-center justify-between gap-4 px-5 py-4 text-left disabled:cursor-not-allowed disabled:opacity-50';

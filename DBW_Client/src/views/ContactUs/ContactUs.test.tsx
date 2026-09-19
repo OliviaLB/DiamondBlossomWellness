@@ -1,22 +1,22 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { PAGES } from '@constants/pages';
-import { AboutUs } from './AboutUs';
+import ContactUs from './ContactUs';
 
-describe('AboutUs', () => {
+describe('ContactUs', () => {
   it('renders the page title', () => {
-    render(<AboutUs />);
+    render(<ContactUs />);
 
-    expect(screen.getByRole('heading', { name: 'Our Story' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Get In Touch' })).toBeInTheDocument();
   });
 
   it('sets its own title and description', () => {
-    render(<AboutUs />);
+    render(<ContactUs />);
 
-    expect(document.title).toBe(PAGES.aboutUs.title);
+    expect(document.title).toBe(PAGES.contactUs.title);
     expect(document.head.querySelector('meta[name="description"]')).toHaveAttribute(
       'content',
-      PAGES.aboutUs.description
+      PAGES.contactUs.description
     );
   });
 });

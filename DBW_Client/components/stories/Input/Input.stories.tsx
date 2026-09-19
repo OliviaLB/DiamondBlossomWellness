@@ -2,7 +2,7 @@ import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { faEnvelope, faLock, faMagnifyingGlass } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { Input } from './Input';
+import Input from './Input';
 
 const meta = {
   title: 'Components/Input',

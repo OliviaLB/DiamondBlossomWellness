@@ -1,12 +1,12 @@
 import { faCalendarCheck } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from '@tanstack/react-router';
-import { Button } from '../../../../../components';
-import Typography from '../../../../../components/stories/Typography/Typography';
+import { Button } from '@components/Button';
+import { Typography } from '@components/Typography';
 import { BODY_CLASSES, CARD_CLASSES, SECTION_CLASSES } from './ClosingCta.styles';
 
 /** Final "book now" prompt, closing out the page. */
-export const ClosingCta = () => {
+const ClosingCta = () => {
   const navigate = useNavigate();
 
   return (
@@ -27,3 +27,5 @@ export const ClosingCta = () => {
     </section>
   );
 };
+
+export default ClosingCta;

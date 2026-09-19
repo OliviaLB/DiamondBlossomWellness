@@ -1,7 +1,7 @@
 import type { ReactNode } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { createMemoryHistory, createRootRoute, createRouter, RouterProvider } from '@tanstack/react-router';
-import { NavLink } from './NavLink';
+import NavLink from './NavLink';
 
 /** `NavLink` renders Tanstack Router's own `Link`, which needs a router context to mount - a minimal, standalone one, just for the story canvas. */
 const withRouter = (children: ReactNode) => {

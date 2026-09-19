@@ -17,7 +17,9 @@
     "noEmit": true,
     "verbatimModuleSyntax": true,
     "paths": {
-      "@components/*": ["./src/components/*"],
+      "@components": ["./components/stories"],
+      "@components/*": ["./components/stories/*"],
+      "@appComponents/*": ["./src/components/*"],
       "@constants/*": ["./src/constants/*"],
       "@hooks/*": ["./src/hooks/*"],
       "@routes/*": ["./src/routes/*"],

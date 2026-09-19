@@ -19,7 +19,7 @@ import type { ChipProps } from './Chip.types';
  * `TAP_ANIMATION`/`TAP_TRANSITION` for its press feedback and the same
  * animated `:focus-visible` ring convention as `Button`/`IconButton`/`Card`.
  */
-export const Chip = ({
+const Chip = ({
   colour = 'neutral',
   'data-testid': dataTestId,
   disabled = false,
@@ -84,3 +84,4 @@ export const Chip = ({
     </motion.div>
   );
 };
+export default Chip;

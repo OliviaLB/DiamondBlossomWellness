@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { HelperText } from './HelperText';
+import HelperText from './HelperText';
 
 const meta = {
   title: 'Components/HelperText',

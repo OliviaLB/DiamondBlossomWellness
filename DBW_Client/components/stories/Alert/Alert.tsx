@@ -6,7 +6,7 @@ import {
   faXmark
 } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Typography from '../Typography/Typography';
+import { Typography } from '../Typography';
 import { ALERT_SEVERITY, ALERT_TITLE_COLOUR, CLOSE_BUTTON_CLASSES, getAlertClassName } from './Alert.styles';
 import type { AlertProps, AlertSeverity } from './Alert.types';
 
@@ -25,15 +25,7 @@ const DEFAULT_ICON: Record<AlertSeverity, typeof faCircleInfo> = {
  * mounts, so it's meant for messages that actually need that, not a
  * decorative aside.
  */
-export const Alert = ({
-  children,
-  'data-testid': dataTestId,
-  icon,
-  id,
-  onClose,
-  severity = 'info',
-  title
-}: AlertProps) => {
+const Alert = ({ children, 'data-testid': dataTestId, icon, id, onClose, severity = 'info', title }: AlertProps) => {
   const resolvedIcon = icon === undefined ? <FontAwesomeIcon icon={DEFAULT_ICON[severity]} /> : icon;
 
   return (
@@ -59,3 +51,4 @@ export const Alert = ({
     </div>
   );
 };
+export default Alert;

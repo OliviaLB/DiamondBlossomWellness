@@ -1,4 +1,4 @@
-import Typography from '../Typography/Typography';
+import { Typography } from '../Typography';
 import type { HelperTextProps } from './HelperText.types';
 
 /**
@@ -7,7 +7,7 @@ import type { HelperTextProps } from './HelperText.types';
  * tone. Renders nothing when neither is set, so a consumer (`Input`, e.g.)
  * can pass both through unconditionally rather than branching itself.
  */
-export const HelperText = ({ 'data-testid': dataTestId, errorMessage, helperText, id }: HelperTextProps) => {
+const HelperText = ({ 'data-testid': dataTestId, errorMessage, helperText, id }: HelperTextProps) => {
   const message = errorMessage || helperText;
 
   if (!message) return null;
@@ -25,3 +25,5 @@ export const HelperText = ({ 'data-testid': dataTestId, errorMessage, helperText
     </Typography>
   );
 };
+
+export default HelperText;

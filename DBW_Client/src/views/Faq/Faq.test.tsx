@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { PAGES } from '@constants/pages';
-import { Faq } from './Faq';
+import Faq from './Faq';
 
 describe('Faq', () => {
   it('renders the page title', () => {

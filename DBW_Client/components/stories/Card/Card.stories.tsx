@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Card } from './Card';
-import { CardContent } from './CardContent';
-import { CardFooter } from './CardFooter';
-import { CardHeader } from './CardHeader';
-import { Button } from '../Button/Button';
+import Card from './Card';
+import CardContent from './CardContent';
+import CardFooter from './CardFooter';
+import CardHeader from './CardHeader';
+import { Button } from '../Button';
 
 const Placeholder = ({ label }: { label: string }) => (
   <div className="flex h-40 w-full items-center justify-center bg-gradient-to-br from-secondary-400 to-tertiary-400">

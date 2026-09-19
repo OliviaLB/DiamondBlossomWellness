@@ -1,4 +1,4 @@
-import type { NavLinkItem } from '../../components';
+import type { NavLinkItem } from '@components/Navbar';
 
 export { BUSINESS_NAME } from '@constants/business';
 

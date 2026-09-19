@@ -3,8 +3,10 @@ import { faGem } from '@awesome.me/kit-c05db0aa61/icons/sharp/light';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from '@tanstack/react-router';
 import { formatDuration, formatPrice, getPackagesForTreatment } from '@utils/pricing';
-import { Button, Card, CardContent, CardFooter, Chip } from '../../../../../components';
-import Typography from '../../../../../components/stories/Typography/Typography';
+import { Button } from '@components/Button';
+import { Card, CardContent, CardFooter } from '@components/Card';
+import { Chip } from '@components/Chip';
+import { Typography } from '@components/Typography';
 import {
   CARD_BODY_CLASSES,
   CARD_CLASSES,
@@ -23,7 +25,7 @@ import {
 import type { ServicePricingProps } from './ServicePricing.types';
 
 /** The pricing block beneath a treatment - a card per session length, then any package deals that include the treatment. */
-export const ServicePricing = ({ treatment }: ServicePricingProps) => {
+const ServicePricing = ({ treatment }: ServicePricingProps) => {
   const navigate = useNavigate();
   const packages = getPackagesForTreatment(treatment.id);
   const book = () => navigate({ to: '/contact-us' });
@@ -116,3 +118,5 @@ export const ServicePricing = ({ treatment }: ServicePricingProps) => {
     </section>
   );
 };
+
+export default ServicePricing;

@@ -2,8 +2,9 @@ import { faArrowRight } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from '@tanstack/react-router';
 import { MotionConfig, motion } from 'motion/react';
-import { Button, Card, CardContent, CardFooter } from '../../../../../components';
-import Typography from '../../../../../components/stories/Typography/Typography';
+import { Button } from '@components/Button';
+import { Card, CardContent, CardFooter } from '@components/Card';
+import { Typography } from '@components/Typography';
 import { SERVICES } from './TreatmentsGrid.constants';
 import {
   CARD_BODY_CLASSES,
@@ -28,7 +29,7 @@ import {
 } from './TreatmentsGrid.styles';
 
 /** "Our Signature Treatments" - a `Card` per treatment, each linking through to the full services page. */
-export const TreatmentsGrid = () => {
+const TreatmentsGrid = () => {
   const navigate = useNavigate();
 
   return (
@@ -98,3 +99,5 @@ export const TreatmentsGrid = () => {
     </section>
   );
 };
+
+export default TreatmentsGrid;

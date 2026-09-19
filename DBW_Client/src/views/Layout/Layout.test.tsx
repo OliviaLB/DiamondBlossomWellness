@@ -1,7 +1,7 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
-import { renderWithRouter } from '../../tests';
-import { Layout } from './Layout';
+import { renderWithRouter } from '../../../tests';
+import Layout from './Layout';
 
 describe('Layout', () => {
   it('renders the business name and primary nav links', async () => {

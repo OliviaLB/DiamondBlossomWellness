@@ -1,1 +1,1 @@
-export { ServiceShowcase } from './ServiceShowcase';
+export { default as ServiceShowcase } from './ServiceShowcase';

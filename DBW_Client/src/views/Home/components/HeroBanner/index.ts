@@ -1,1 +1,1 @@
-export { HeroBanner } from './HeroBanner';
+export { default as HeroBanner } from './HeroBanner';

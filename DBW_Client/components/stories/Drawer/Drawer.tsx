@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { faXmark } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { AnimatePresence, motion } from 'motion/react';
-import { IconButton } from '../IconButton/IconButton';
+import { IconButton } from '../IconButton';
 import { BACKDROP_CLASSES, CLOSE_BUTTON_WRAPPER_CLASSES, getPanelClassName, getPanelOffscreenX } from './Drawer.styles';
 import type { DrawerProps } from './Drawer.types';
 
@@ -12,7 +12,7 @@ import type { DrawerProps } from './Drawer.types';
  * close button all call `onClose`. Locks page scroll while open, and renders
  * as `role="dialog"`/`aria-modal`, labelled by the required `aria-label`.
  */
-export const Drawer = ({
+const Drawer = ({
   'aria-label': ariaLabel,
   children,
   'data-testid': dataTestId,
@@ -84,3 +84,5 @@ export const Drawer = ({
     </AnimatePresence>
   );
 };
+
+export default Drawer;

@@ -20,7 +20,7 @@ const HOVER_LIFT = { y: -4 };
  * `TAP_TRANSITION`, and gets the same animated `:focus-visible` ring as
  * `Button`/`IconButton`.
  */
-export const Card = ({
+const Card = ({
   background = 'card',
   border = 'primary',
   borderRadius = 'xl',
@@ -78,3 +78,4 @@ export const Card = ({
     </motion.div>
   );
 };
+export default Card;

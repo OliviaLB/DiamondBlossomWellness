@@ -1,8 +1,8 @@
 import { faArrowRight, faCalendarCheck } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from '@tanstack/react-router';
-import { Button } from '../../../../../components';
-import Typography from '../../../../../components/stories/Typography/Typography';
+import { Button } from '@components/Button';
+import { Typography } from '@components/Typography';
 import {
   BODY_CLASSES,
   CTA_ROW_CLASSES,
@@ -17,7 +17,7 @@ import {
 } from './HeroBanner.styles';
 
 /** Split hero - a text panel (its own gradient background) alongside a dedicated photo panel, rather than text overlaid on the image. */
-export const HeroBanner = () => {
+const HeroBanner = () => {
   const navigate = useNavigate();
 
   return (
@@ -74,3 +74,5 @@ export const HeroBanner = () => {
     </section>
   );
 };
+
+export default HeroBanner;

@@ -4,6 +4,7 @@ import tailwindcss from '@tailwindcss/vite';
 import mkcert from 'vite-plugin-mkcert';
 import { tanstackRouter } from '@tanstack/router-plugin/vite';
 import { aliases } from './aliases.ts';
+import { seoPlugin } from './tools/seo/seoPlugin.ts';
 
 const buildTimestamp = new Date().getTime();
 
@@ -15,7 +16,8 @@ export default defineConfig({
     }),
     react(),
     tailwindcss(),
-    mkcert()
+    mkcert(),
+    seoPlugin()
   ],
   resolve: {
     alias: aliases

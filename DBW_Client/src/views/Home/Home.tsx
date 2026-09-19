@@ -1,5 +1,5 @@
 import { PAGES } from '@constants/pages';
-import { Seo } from '../../components/Seo';
+import { Seo } from '@appComponents/Seo';
 import { AreasServed } from './components/AreasServed';
 import { ClosingCta } from './components/ClosingCta';
 import { FeatureStrip } from './components/FeatureStrip';

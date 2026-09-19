@@ -1,2 +1,2 @@
-export { IconButton } from './IconButton';
+export { default as IconButton } from './IconButton';
 export type * from './IconButton.types';

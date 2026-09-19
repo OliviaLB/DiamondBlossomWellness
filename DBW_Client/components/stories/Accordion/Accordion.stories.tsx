@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Accordion } from './Accordion';
+import Accordion from './Accordion';
 import type { AccordionItemData } from './Accordion.types';
 
 const FAQ_ITEMS: AccordionItemData[] = [

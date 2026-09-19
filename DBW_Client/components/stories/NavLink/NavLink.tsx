@@ -13,9 +13,11 @@ import type { NavLinkProps } from './NavLink.types';
  * underline that grows from the centre on hover and stays fully drawn while
  * active. `block` is a full-width row for the mobile drawer.
  */
-export const NavLink = ({ 'data-testid': dataTestId, id, label, onClick, to, variant = 'inline' }: NavLinkProps) => (
+const NavLink = ({ 'data-testid': dataTestId, id, label, onClick, to, variant = 'inline' }: NavLinkProps) => (
   <Link id={id} data-testid={dataTestId} to={to as never} onClick={onClick} className={getNavLinkClassName(variant)}>
     {label}
     {variant === 'inline' && <span aria-hidden className={INLINE_UNDERLINE_CLASSES} />}
   </Link>
 );
+
+export default NavLink;

@@ -1,1 +1,1 @@
-export { ClosingCta } from './ClosingCta';
+export { default as ClosingCta } from './ClosingCta';

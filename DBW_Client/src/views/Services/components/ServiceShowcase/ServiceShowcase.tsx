@@ -38,7 +38,7 @@ import type { ServiceShowcaseProps } from './ServiceShowcase.types';
  * Pass `treatmentId` to control the selection (the services route drives it from the
  * `?treatment=` query param); left out, it keeps its own state, starting on the first treatment.
  */
-export const ServiceShowcase = ({ onTreatmentChange, treatmentId }: ServiceShowcaseProps) => {
+const ServiceShowcase = ({ onTreatmentChange, treatmentId }: ServiceShowcaseProps) => {
   const baseId = useId();
   const tabRefs = useRef<Array<HTMLButtonElement | null>>([]);
   const [internalId, setInternalId] = useState(TREATMENTS[0].id);
@@ -170,3 +170,5 @@ export const ServiceShowcase = ({ onTreatmentChange, treatmentId }: ServiceShowc
     </MotionConfig>
   );
 };
+
+export default ServiceShowcase;

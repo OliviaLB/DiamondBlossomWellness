@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import { Drawer } from './Drawer';
-import { Button } from '../Button/Button';
+import Drawer from './Drawer';
+import { Button } from '../Button';
 
 const meta = {
   title: 'Components/Drawer',

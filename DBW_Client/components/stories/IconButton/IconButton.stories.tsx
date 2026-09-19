@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 import { faHeart } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { IconButton } from './IconButton';
+import IconButton from './IconButton';
 
 const meta = {
   title: 'Components/IconButton',

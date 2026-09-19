@@ -1,5 +1,5 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
-import Typography from '../Typography/Typography';
+import { Typography } from '../Typography';
 
 interface FontFamily {
   name: string;

@@ -1,1 +1,1 @@
-export { FeatureStrip } from './FeatureStrip';
+export { default as FeatureStrip } from './FeatureStrip';

@@ -1,6 +1,6 @@
 import { useId } from 'react';
-import { HelperText } from '../HelperText/HelperText';
-import Typography from '../Typography/Typography';
+import { HelperText } from '../HelperText';
+import { Typography } from '../Typography';
 import { END_ICON_CLASSES, getInputClassName, START_ICON_CLASSES } from './Input.styles';
 import type { InputProps } from './Input.types';
 
@@ -13,7 +13,7 @@ import type { InputProps } from './Input.types';
  * Uses `useId()` to link `label`'s `htmlFor` and the helper/error text's
  * `aria-describedby` to the `<input>` even when `id` is omitted.
  */
-export const Input = ({
+const Input = ({
   autoComplete,
   'data-testid': dataTestId,
   defaultValue,
@@ -82,3 +82,5 @@ export const Input = ({
     </div>
   );
 };
+
+export default Input;
