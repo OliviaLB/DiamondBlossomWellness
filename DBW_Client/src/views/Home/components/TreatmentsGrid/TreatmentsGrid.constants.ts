@@ -1,40 +1,46 @@
-import {
-  faDroplet,
-  faFaceSmileRelaxed,
-  faHandHoldingDroplet,
-  faHandsHoldingCircle
-} from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
-import type { IconDefinition } from '@fortawesome/fontawesome-svg-core';
-
 export interface ServiceItem {
   description: string;
-  icon: IconDefinition;
+  /** Filename of the treatment photo in `public/`. */
+  imageName: string;
   title: string;
 }
 
-/** The four treatments called out on the homepage, in display order. */
+/** The treatments called out on the homepage, in display order. */
 export const SERVICES: ServiceItem[] = [
   {
-    icon: faDroplet,
     title: 'Japanese Head Spa',
     description:
-      'A restorative ritual of warm oil, deep scalp massage and gentle cleansing that melts tension and leaves hair radiant.'
+      'A slow, sensory ritual of warm oil, deep scalp massage and a gentle cleanse. Tension melts away, leaving hair glossy, light and revived.',
+    imageName: 'AdobeStock_1966172251.jpeg'
   },
   {
-    icon: faFaceSmileRelaxed,
+    title: 'Hydrotherm 3D',
+    description:
+      'Warmth, steam and deep hydration work together to nourish the scalp and hair, leaving them balanced, soft and visibly refreshed.',
+    imageName: 'AdobeStock_117700241.jpeg'
+  },
+  {
     title: 'Facials',
     description:
-      'Tailored skincare rituals using premium, considered products to cleanse, nourish and restore a healthy glow.'
+      'Tailored to your skin and made with considered, premium products, to cleanse, nourish and restore a calm, healthy glow.',
+    imageName: 'AdobeStock_492699325.jpeg'
   },
   {
-    icon: faHandHoldingDroplet,
     title: 'Scalp Massage',
-    description: 'Targeted pressure-point techniques to ease tension, boost circulation and quiet a busy mind.'
+    description:
+      'Focused pressure-point work to release tension, encourage circulation and quieten a busy mind. A restorative reset in its own right.',
+    imageName: 'AdobeStock_2169279143.jpeg'
   },
   {
-    icon: faHandsHoldingCircle,
-    title: 'General Massage',
+    title: 'Relaxation Massage',
     description:
-      'Full-body therapeutic massage, adapted to what you need that day, for deep relaxation and renewal.'
+      'A flowing full-body massage with light to medium pressure, adapted to you on the day, to soothe tired muscles and settle the mind.',
+    imageName: 'AdobeStock_258379234.jpeg'
+  },
+  {
+    title: 'Deep Tissue Massage',
+    description:
+      'Firm, focused work on knots and stubborn tension in the back, neck and shoulders. Ideal for tight muscles, desk-bound days and recovery.',
+    imageName: 'AdobeStock_250901528.jpeg'
   }
 ];

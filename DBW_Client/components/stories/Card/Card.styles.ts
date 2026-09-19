@@ -9,14 +9,23 @@ const INTERACTIVE_CLASSES =
 
 type CardClassNameProps = Pick<
   CardProps,
-  'background' | 'border' | 'borderRadius' | 'fullWidth' | 'interactive' | 'marginX' | 'marginY' | 'shadow'
+  | 'background'
+  | 'border'
+  | 'borderRadius'
+  | 'className'
+  | 'fullWidth'
+  | 'interactive'
+  | 'marginX'
+  | 'marginY'
+  | 'shadow'
 >;
 
-/** Shell - background/border/radius/shadow, plus the `interactive` affordances (cursor, hover shadow, focus ring). */
+/** Shell - background/border/radius/shadow, plus the `interactive` affordances (cursor, hover shadow, focus ring). `className` (caller overrides) is appended last. */
 export const getCardClassName = ({
   background = 'card',
   border = 'primary',
   borderRadius = 'xl',
+  className,
   fullWidth = false,
   interactive = false,
   marginX,
@@ -32,5 +41,6 @@ export const getCardClassName = ({
     marginX && MARGINX[marginX],
     marginY && MARGINY[marginY],
     fullWidth && 'w-full',
-    interactive && INTERACTIVE_CLASSES
+    interactive && INTERACTIVE_CLASSES,
+    className
   );

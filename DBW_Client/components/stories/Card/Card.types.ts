@@ -26,6 +26,8 @@ export interface CardProps {
    * first renders full-bleed, clipped to `borderRadius`.
    */
   children?: ReactNode;
+  /** Extra classes appended after the card's own, so they win on conflict - e.g. `h-full flex flex-col` to fill a grid cell. */
+  className?: string;
   /** `data-testid` applied to the root element, for test/automation targeting. */
   'data-testid'?: string;
   /**

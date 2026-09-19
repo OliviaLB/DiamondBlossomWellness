@@ -1,11 +1,31 @@
 import { faArrowRight } from '@awesome.me/kit-c05db0aa61/icons/classic/solid';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from '@tanstack/react-router';
+import { MotionConfig, motion } from 'motion/react';
 import { Button, Card, CardContent, CardFooter } from '../../../../../components';
 import Typography from '../../../../../components/stories/Typography/Typography';
-import { EYEBROW_CLASSES } from '../../Home.styles';
 import { SERVICES } from './TreatmentsGrid.constants';
-import { GRID_CLASSES, HEADER_CLASSES, ICON_BADGE_CLASSES, SECTION_CLASSES } from './TreatmentsGrid.styles';
+import {
+  CARD_BODY_CLASSES,
+  CARD_CLASSES,
+  CARD_EDGE_CLASSES,
+  CARD_GLOW_CLASSES,
+  CARD_GLOW_STYLE,
+  CARD_GROW_TRANSITION,
+  CARD_VARIANTS,
+  CARD_WRAPPER_CLASSES,
+  CARD_WRAPPER_STYLE,
+  GLINT_VARIANTS,
+  GLOW_VARIANTS,
+  GRID_CLASSES,
+  HEADER_CLASSES,
+  IMAGE_CLASSES,
+  IMAGE_FADE_CLASSES,
+  IMAGE_GLINT_CLASSES,
+  IMAGE_GLINT_STYLE,
+  IMAGE_WRAPPER_CLASSES,
+  SECTION_CLASSES
+} from './TreatmentsGrid.styles';
 
 /** "Our Signature Treatments" - a `Card` per treatment, each linking through to the full services page. */
 export const TreatmentsGrid = () => {
@@ -14,40 +34,67 @@ export const TreatmentsGrid = () => {
   return (
     <section className={SECTION_CLASSES}>
       <div className={HEADER_CLASSES}>
-        <p className={EYEBROW_CLASSES}>Our Signature Treatments</p>
+        <Typography variant="subtitle2" colour="secondary" textAlign="center" className="tracking-[0.3em] uppercase">
+          Our Signature Treatments
+        </Typography>
         <Typography variant="h2">Considered care, tailored to you</Typography>
         <Typography variant="body1" colour="secondary">
           Every ritual is delivered with intention, from the first consultation to the final touch.
         </Typography>
       </div>
 
-      <div className={GRID_CLASSES}>
-        {SERVICES.map((service) => (
-          <Card key={service.title} fullWidth>
-            <CardContent paddingX="4x" paddingY="4x">
-              <div className={ICON_BADGE_CLASSES}>
-                <FontAwesomeIcon icon={service.icon} />
-              </div>
-              <Typography variant="h6" gutterBottom>
-                {service.title}
-              </Typography>
-              <Typography variant="body2" colour="secondary">
-                {service.description}
-              </Typography>
-            </CardContent>
-            <CardFooter paddingX="4x">
-              <Button
-                label="Learn more"
-                variant="text"
-                tone="secondary"
-                size="sm"
-                endIcon={<FontAwesomeIcon icon={faArrowRight} />}
-                onClick={() => navigate({ to: '/services' })}
-              />
-            </CardFooter>
-          </Card>
-        ))}
-      </div>
+      <MotionConfig reducedMotion="user">
+        <div className={GRID_CLASSES}>
+          {SERVICES.map((service) => (
+            <motion.div
+              key={service.title}
+              className={CARD_WRAPPER_CLASSES}
+              style={CARD_WRAPPER_STYLE}
+              variants={CARD_VARIANTS}
+              initial="rest"
+              animate="rest"
+              whileHover="hover"
+              transition={CARD_GROW_TRANSITION}
+            >
+              <motion.div className={CARD_GLOW_CLASSES} style={CARD_GLOW_STYLE} variants={GLOW_VARIANTS} />
+              <Card fullWidth className={CARD_CLASSES}>
+                <div className={IMAGE_WRAPPER_CLASSES}>
+                  <img
+                    src={`/${service.imageName}`}
+                    alt={`${service.title} treatment`}
+                    loading="lazy"
+                    decoding="async"
+                    className={IMAGE_CLASSES}
+                  />
+                  <div className={IMAGE_FADE_CLASSES} />
+                  <motion.div className={IMAGE_GLINT_CLASSES} style={IMAGE_GLINT_STYLE} variants={GLINT_VARIANTS} />
+                </div>
+                <div className={CARD_BODY_CLASSES}>
+                  <CardContent paddingX="4x" paddingY="4x">
+                    <Typography variant="h6" gutterBottom>
+                      {service.title}
+                    </Typography>
+                    <Typography variant="body2" colour="secondary">
+                      {service.description}
+                    </Typography>
+                  </CardContent>
+                  <CardFooter paddingX="4x">
+                    <Button
+                      label="Learn more"
+                      variant="text"
+                      tone="secondary"
+                      size="sm"
+                      endIcon={<FontAwesomeIcon icon={faArrowRight} />}
+                      onClick={() => navigate({ to: '/services' })}
+                    />
+                  </CardFooter>
+                </div>
+              </Card>
+              <motion.div className={CARD_EDGE_CLASSES} variants={GLOW_VARIANTS} />
+            </motion.div>
+          ))}
+        </div>
+      </MotionConfig>
     </section>
   );
 };

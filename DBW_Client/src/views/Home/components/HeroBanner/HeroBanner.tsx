@@ -3,7 +3,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { useNavigate } from '@tanstack/react-router';
 import { Button } from '../../../../../components';
 import Typography from '../../../../../components/stories/Typography/Typography';
-import { EYEBROW_CLASSES } from '../../Home.styles';
 import {
   BODY_CLASSES,
   CTA_ROW_CLASSES,
@@ -13,8 +12,8 @@ import {
   SEAM_DESKTOP_CLASSES,
   SEAM_MOBILE_CLASSES,
   SECTION_CLASSES,
-  TAGLINE_CLASSES,
-  TEXT_PANEL_CLASSES
+  TEXT_PANEL_CLASSES,
+  TOP_SCRIM_CLASSES
 } from './HeroBanner.styles';
 
 /** Split hero - a text panel (its own gradient background) alongside a dedicated photo panel, rather than text overlaid on the image. */
@@ -24,7 +23,7 @@ export const HeroBanner = () => {
   return (
     <section className={SECTION_CLASSES}>
       <div className={TEXT_PANEL_CLASSES}>
-        <Typography variant="subtitle2" colour="secondary" className="tracking-[0.3em] uppercase">
+        <Typography variant="subtitle2" colour="secondary" textAlign="center" className="tracking-[0.3em] uppercase">
           Japanese Head Spa &middot; Facials &middot; Massage
         </Typography>
 
@@ -36,7 +35,7 @@ export const HeroBanner = () => {
           Restore. Renew. Radiate.
         </Typography>
 
-        <Typography variant="body1" colour="secondary" className={BODY_CLASSES}>
+        <Typography variant="body1" colour="secondary" className={BODY_CLASSES} textAlign="center">
           Signature Japanese head spa rituals, considered facials and therapeutic massage - delivered in a calm, private
           space held to a premium standard.
         </Typography>
@@ -70,6 +69,7 @@ export const HeroBanner = () => {
         />
         <div className={SEAM_MOBILE_CLASSES} />
         <div className={SEAM_DESKTOP_CLASSES} />
+        <div className={TOP_SCRIM_CLASSES} />
       </div>
     </section>
   );
