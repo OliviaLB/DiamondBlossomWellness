@@ -31,7 +31,7 @@ export const HeroBanner = () => {
           Restore your crown, renew your glow.
         </Typography>
 
-        <Typography as="h2" variant="subtitle1" colour="secondary" className="text-2xl text-tertiary-400 italic">
+        <Typography as="h2" variant="subtitle1" colour="secondary" className="text-2xl! text-tertiary-400 italic">
           Restore. Renew. Radiate.
         </Typography>
 

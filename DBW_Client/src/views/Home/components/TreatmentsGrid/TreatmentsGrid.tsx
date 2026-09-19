@@ -47,7 +47,7 @@ export const TreatmentsGrid = () => {
         <div className={GRID_CLASSES}>
           {SERVICES.map((service) => (
             <motion.div
-              key={service.title}
+              key={service.id}
               className={CARD_WRAPPER_CLASSES}
               style={CARD_WRAPPER_STYLE}
               variants={CARD_VARIANTS}
@@ -74,7 +74,7 @@ export const TreatmentsGrid = () => {
                     <Typography variant="h6" gutterBottom>
                       {service.title}
                     </Typography>
-                    <Typography variant="body2" colour="secondary">
+                    <Typography variant="body2" colour="secondary" textAlign="justify">
                       {service.description}
                     </Typography>
                   </CardContent>
@@ -85,7 +85,7 @@ export const TreatmentsGrid = () => {
                       tone="secondary"
                       size="sm"
                       endIcon={<FontAwesomeIcon icon={faArrowRight} />}
-                      onClick={() => navigate({ to: '/services' })}
+                      onClick={() => navigate({ to: '/services', search: { treatment: service.id } })}
                     />
                   </CardFooter>
                 </div>

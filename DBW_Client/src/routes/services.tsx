@@ -1,6 +1,7 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { Services } from '@views/Services';
+import { ServicesRoute, validateServicesSearch } from '@views/Services';
 
 export const Route = createFileRoute('/services')({
-  component: Services
+  validateSearch: validateServicesSearch,
+  component: ServicesRoute
 });

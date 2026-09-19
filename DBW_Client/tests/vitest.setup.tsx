@@ -79,6 +79,9 @@ const mockFramerMotion = vi.hoisted(() => async () => {
 
   return {
     AnimatePresence: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+    // Pass-through wrappers - real ones only configure/coordinate animation, which jsdom doesn't run.
+    LayoutGroup: ({ children }: { children: React.ReactNode }) => <>{children}</>,
+    MotionConfig: ({ children }: { children: React.ReactNode }) => <>{children}</>,
     motion,
     // Every animated component (Button, BorderBeam, Modal, Node, ...) reads
     // this to decide whether to animate at all - without a mock, importing

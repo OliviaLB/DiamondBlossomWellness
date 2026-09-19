@@ -16,6 +16,8 @@ describe('Home', () => {
     expect(await screen.findByRole('heading', { name: 'Japanese Head Spa' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Facials' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: 'Scalp Massage' })).toBeInTheDocument();
-    expect(screen.getByRole('heading', { name: 'General Massage' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Hydrotherm 3D' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Relaxation Massage' })).toBeInTheDocument();
+    expect(screen.getByRole('heading', { name: 'Deep Tissue Massage' })).toBeInTheDocument();
   });
 });

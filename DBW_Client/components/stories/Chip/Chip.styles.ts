@@ -40,7 +40,7 @@ export const getChipClassName = ({
   size = 'md'
 }: ChipClassNameProps): string =>
   clsx(
-    'inline-flex items-center rounded-full border font-body font-medium',
+    'inline-flex items-center rounded-full border font-body font-medium whitespace-nowrap',
     CHIP_COLOUR[colour],
     CHIP_SIZE[size],
     onClick && !disabled && INTERACTIVE_CLASSES,
