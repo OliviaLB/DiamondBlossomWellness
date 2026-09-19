@@ -1,4 +1,4 @@
-import { BUSINESS_NAME, PRIMARY_AREA, SERVICE_AREAS_TEXT } from './business';
+import { BUSINESS_NAME, FOUNDER_NAME, PRIMARY_AREA, SERVICE_AREAS_TEXT } from './business';
 
 export interface PageSeo {
   /** Path from the site root, with any query string. */
@@ -24,8 +24,8 @@ export const PAGES = {
   },
   aboutUs: {
     path: '/about-us',
-    title: `About Us | ${BUSINESS_NAME}, ${PRIMARY_AREA}`,
-    description: `Meet ${BUSINESS_NAME} - a calm, premium head spa, facial and massage studio serving ${SERVICE_AREAS_TEXT}.`
+    title: `About ${FOUNDER_NAME} | ${BUSINESS_NAME}, ${PRIMARY_AREA}`,
+    description: `Meet ${FOUNDER_NAME}, founder of ${BUSINESS_NAME}: a premium spa with a Pilates background, serving ${SERVICE_AREAS_TEXT}.`
   },
   faq: {
     path: '/faq',

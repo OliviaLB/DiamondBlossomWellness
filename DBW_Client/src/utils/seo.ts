@@ -1,4 +1,4 @@
-import { BUSINESS_NAME, PRIMARY_AREA, REGION, SERVICE_AREAS } from '@constants/business';
+import { BUSINESS_NAME, FOUNDER_NAME, PRIMARY_AREA, REGION, SERVICE_AREAS } from '@constants/business';
 import type { PageSeo } from '@constants/pages';
 import { PAGES } from '@constants/pages';
 import { TREATMENTS } from '@constants/services';
@@ -42,6 +42,7 @@ export const buildBusinessSchema = (): JsonLdObject => {
     ...(address && { address: { '@type': 'PostalAddress', ...address, addressCountry: 'GB' } }),
     ...(geo && { geo: { '@type': 'GeoCoordinates', ...geo } }),
     ...(sameAs.length > 0 && { sameAs }),
+    founder: { '@type': 'Person', name: FOUNDER_NAME },
     areaServed: AREA_SERVED,
     hasOfferCatalog: {
       '@type': 'OfferCatalog',

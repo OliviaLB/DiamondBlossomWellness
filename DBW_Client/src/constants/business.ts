@@ -5,6 +5,8 @@
 
 export const BUSINESS_NAME = 'Diamond Blossom Wellness';
 
+export const FOUNDER_NAME = 'Lois';
+
 /** Open Graph's form of the site's `en-GB` locale. */
 export const OG_LOCALE = 'en_GB';
 

@@ -1,21 +1,51 @@
+import { Typography } from '@components/Typography';
 import { PAGES } from '@constants/pages';
 import { Seo } from '@appComponents/Seo';
+import { AboutSection } from './components/AboutSection';
+import { BulletList } from './components/BulletList';
+import { ABOUT_SECTIONS, INTRO_HEADING, INTRO_LEAD } from './AboutUs.constants';
+import { CONTENT_CLASSES, HEADER_CLASSES, MAIN_CLASSES } from './AboutUs.styles';
 
-const AboutUs = () => {
-  return (
-    <main className="flex min-h-screen flex-col items-center gap-6 bg-surface-app px-6 pt-32 pb-16 text-center">
-      <Seo {...PAGES.aboutUs} />
+/** Who's behind the business - an introduction, then a card each for qualifications, approach and background. */
+const AboutUs = () => (
+  <main className={MAIN_CLASSES}>
+    <Seo {...PAGES.aboutUs} />
 
-      <p className="font-heading text-sm tracking-[0.3em] text-secondary-400 uppercase">About Us</p>
+    <div className={HEADER_CLASSES}>
+      <Typography variant="subtitle2" colour="secondary" textAlign="center" className="tracking-[0.3em] uppercase">
+        About Us
+      </Typography>
+      <Typography variant="h1" textAlign="center">
+        {INTRO_HEADING}
+      </Typography>
+      <Typography variant="body1" colour="secondary" textAlign="center">
+        {INTRO_LEAD}
+      </Typography>
+    </div>
 
-      <h1 className="font-display text-4xl font-semibold text-ink-primary sm:text-5xl">Our Story</h1>
-
-      <p className="max-w-xl font-body text-base text-ink-secondary">
-        Diamond Blossom Wellness was founded on the belief that every treatment should feel considered, unhurried, and
-        held to a premium standard - a calm space to restore, renew, and radiate.
-      </p>
-    </main>
-  );
-};
+    <div className={CONTENT_CLASSES}>
+      {ABOUT_SECTIONS.map(({ closingParagraphs = [], heading, id, list, listColumns, listIntro, paragraphs }) => (
+        <AboutSection key={id} heading={heading}>
+          {paragraphs.map((paragraph) => (
+            <Typography key={paragraph} variant="body1" colour="secondary" textAlign="justify">
+              {paragraph}
+            </Typography>
+          ))}
+          {listIntro && (
+            <Typography variant="body1" colour="secondary">
+              {listIntro}
+            </Typography>
+          )}
+          {list && <BulletList items={list} columns={listColumns} />}
+          {closingParagraphs.map((paragraph) => (
+            <Typography key={paragraph} variant="body1" colour="secondary" textAlign="justify">
+              {paragraph}
+            </Typography>
+          ))}
+        </AboutSection>
+      ))}
+    </div>
+  </main>
+);
 
 export default AboutUs;

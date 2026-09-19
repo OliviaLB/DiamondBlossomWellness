@@ -1,5 +1,5 @@
 import { afterEach, beforeEach, describe, expect, it } from 'vitest';
-import { BUSINESS_NAME, PRIMARY_AREA, SERVICE_AREAS } from '@constants/business';
+import { BUSINESS_NAME, FOUNDER_NAME, PRIMARY_AREA, SERVICE_AREAS } from '@constants/business';
 import { PAGES } from '@constants/pages';
 import { TREATMENTS } from '@constants/services';
 import { SITE } from '@constants/site';
@@ -74,6 +74,7 @@ describe('buildBusinessSchema', () => {
     expect(schema.url).toBe('https://www.example.co.uk');
     expect(schema['@id']).toBe('https://www.example.co.uk/#business');
     expect(schema.image).toBe('https://www.example.co.uk/og-image.jpg');
+    expect(schema.founder).toEqual({ '@type': 'Person', name: FOUNDER_NAME });
     expect(schema.areaServed).toEqual([
       ...SERVICE_AREAS.map((name) => ({ '@type': 'City', name })),
       { '@type': 'AdministrativeArea', name: 'Hampshire' }
